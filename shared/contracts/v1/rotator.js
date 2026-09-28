@@ -1,0 +1,66 @@
+// A single rotator (resident, fellow, student). Multi-segment is
+// canonical: `segments` is an array of {start,end} date ranges so one
+// rotator can span discontinuous date windows. schoolType drives the
+// program-rule dispatcher in programRules.js.
+
+export default {
+  $id: "rotator.v1",
+  type: "object",
+  required: [
+    "id",
+    "fullName",
+    "displayName",
+    "program",
+    "level",
+    "role",
+    "segments",
+    "schoolType",
+    "continuityClinic",
+    "dayOff",
+    "unavailableRanges"
+  ],
+  properties: {
+    id: { type: "string" },
+    fullName: { type: "string" },
+    displayName: { type: "string" },
+    program: { type: "string" },
+    level: { type: "string" },
+    role: { type: "string", enum: ["Resident", "Fellow", "Student"] },
+    segments: {
+      type: "array",
+      items: {
+        type: "object",
+        required: ["start", "end"],
+        properties: {
+          start: { type: "string", format: "date" },
+          end: { type: "string", format: "date" },
+          defaultPhase: { type: "string", enum: ["outpatient", "inpatient"] }
+        },
+        additionalProperties: false
+      }
+    },
+    schoolType: {
+      type: "string",
+      enum: ["methodist", "ut-adult", "ut-peds", "ut-student", "ut-psychiatry", "other"]
+    },
+    continuityClinic: { type: "string" },
+    dayOff: {
+      type: "array",
+      items: { type: "string" }
+    },
+    unavailableRanges: {
+      type: "array",
+      items: {
+        type: "object",
+        required: ["start", "end"],
+        properties: {
+          start: { type: "string", format: "date" },
+          end: { type: "string", format: "date" },
+          label: { type: "string" }
+        },
+        additionalProperties: true
+      }
+    }
+  },
+  additionalProperties: true
+};

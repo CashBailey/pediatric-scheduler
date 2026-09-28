@@ -1,0 +1,254 @@
+{
+  "$id": "scheduler-state.v1",
+  "type": "object",
+  "required": [
+    "version",
+    "activeBlockId",
+    "serviceBlocks",
+    "rotators",
+    "attendings",
+    "expectedSourcePrograms",
+    "inpatientAssignments",
+    "outpatientSessions",
+    "rules"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "activeBlockId": {
+      "type": "string"
+    },
+    "serviceBlocks": {
+      "type": "array",
+      "items": {
+        "$ref": "service-block.v1"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "importedAt": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "program": {
+            "type": "string"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "fileType": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "parsedRows": {
+            "type": "array"
+          },
+          "importedRotatorCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "importWarningCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "importWarnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "rotators": {
+      "type": "array",
+      "items": {
+        "$ref": "rotator.v1"
+      }
+    },
+    "attendings": {
+      "type": "array",
+      "items": {
+        "$ref": "attending.v1"
+      }
+    },
+    "expectedSourcePrograms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inpatientAssignments": {
+      "type": "array",
+      "items": {
+        "$ref": "inpatient-assignment.v1"
+      }
+    },
+    "outpatientSessions": {
+      "type": "array",
+      "items": {
+        "$ref": "outpatient-session.v1"
+      }
+    },
+    "halfDayFacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "date",
+          "period",
+          "rotatorId",
+          "kind",
+          "source"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "period": {
+            "type": "string",
+            "enum": [
+              "AM",
+              "PM"
+            ]
+          },
+          "rotatorId": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "sourceText": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "rules": {
+      "type": "object",
+      "properties": {
+        "methodistOutpatientFirst": {
+          "type": "boolean"
+        },
+        "maxConsecutiveInpatientDays": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "honorNoClinicHolidays": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "clinicAssignments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "clinicOccurrenceId",
+          "rotatorId",
+          "date",
+          "session"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "clinicOccurrenceId": {
+            "type": "string"
+          },
+          "rotatorId": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "session": {
+            "type": "string",
+            "enum": [
+              "AM",
+              "PM"
+            ]
+          },
+          "source": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "posterSettings": {
+      "type": "object",
+      "properties": {
+        "programName": {
+          "type": "string"
+        },
+        "chief": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "tagline": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "notes": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

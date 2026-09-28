@@ -1,0 +1,4630 @@
+{
+  "generatedFrom": "shared/scheduler/program-rules.js::generateDraft",
+  "cases": [
+    {
+      "name": "fair fill plus outpatient top up",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "b1",
+          "serviceBlocks": [
+            {
+              "id": "b1",
+              "name": "B",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-08",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 1
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "A",
+              "displayName": "A",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            },
+            {
+              "id": "r2",
+              "fullName": "B",
+              "displayName": "B",
+              "program": "Other",
+              "level": "PGY-3",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "b1",
+          "name": "B",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-08",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [],
+          "coverage": {
+            "weekday": {
+              "ip": {
+                "count": 1
+              }
+            }
+          }
+        }
+      ],
+      "output": {
+        "state": {
+          "version": 2,
+          "activeBlockId": "b1",
+          "serviceBlocks": [
+            {
+              "id": "b1",
+              "name": "B",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-08",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 1
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "A",
+              "displayName": "A",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            },
+            {
+              "id": "r2",
+              "fullName": "B",
+              "displayName": "B",
+              "program": "Other",
+              "level": "PGY-3",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "in-2026-05-04-r1-resident",
+              "date": "2026-05-04",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-05-r2-resident",
+              "date": "2026-05-05",
+              "rotatorId": "r2",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-06-r1-resident",
+              "date": "2026-05-06",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-07-r2-resident",
+              "date": "2026-05-07",
+              "rotatorId": "r2",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-08-r1-resident",
+              "date": "2026-05-08",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            }
+          ],
+          "outpatientSessions": [
+            {
+              "id": "out-fill-2026-05-04-am-r2",
+              "date": "2026-05-04",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r2",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-04-pm-r2",
+              "date": "2026-05-04",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r2",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-05-am-r1",
+              "date": "2026-05-05",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-05-pm-r1",
+              "date": "2026-05-05",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-06-am-r2",
+              "date": "2026-05-06",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r2",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-06-pm-r2",
+              "date": "2026-05-06",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r2",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-07-am-r1",
+              "date": "2026-05-07",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-07-pm-r1",
+              "date": "2026-05-07",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-08-am-r2",
+              "date": "2026-05-08",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r2",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-08-pm-r2",
+              "date": "2026-05-08",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r2",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            }
+          ],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        "report": {
+          "summary": {
+            "blockName": "B",
+            "startDate": "2026-05-04",
+            "endDate": "2026-05-08",
+            "inpatientAdded": 5,
+            "outpatientAdded": 10,
+            "errorCount": 0,
+            "warningCount": 1
+          },
+          "checks": [
+            {
+              "id": "op-below-target",
+              "severity": "warning",
+              "dates": [
+                "2026-05-04",
+                "2026-05-05",
+                "2026-05-06",
+                "2026-05-07",
+                "2026-05-08"
+              ],
+              "message": "5 clinic days (first: 2026-05-04) have fewer than 2 outpatient rotators."
+            }
+          ],
+          "unmet": []
+        }
+      }
+    },
+    {
+      "name": "methodist seeds both phases",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "june",
+          "serviceBlocks": [
+            {
+              "id": "june",
+              "name": "june",
+              "startDate": "2026-06-01",
+              "endDate": "2026-06-28",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "holiday": {
+                  "ip": {
+                    "count": 0
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "m1",
+              "fullName": "Casey Methodist",
+              "displayName": "Casey Methodist",
+              "program": "Methodist",
+              "schoolType": "methodist",
+              "level": "PGY-3",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-06-01",
+                  "end": "2026-06-28"
+                }
+              ],
+              "rotationStartDate": "2026-06-01",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "june",
+          "name": "june",
+          "startDate": "2026-06-01",
+          "endDate": "2026-06-28",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [],
+          "coverage": {
+            "weekday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "saturday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "sunday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "holiday": {
+              "ip": {
+                "count": 0
+              }
+            }
+          }
+        }
+      ],
+      "output": {
+        "state": {
+          "version": 2,
+          "activeBlockId": "june",
+          "serviceBlocks": [
+            {
+              "id": "june",
+              "name": "june",
+              "startDate": "2026-06-01",
+              "endDate": "2026-06-28",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "holiday": {
+                  "ip": {
+                    "count": 0
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "m1",
+              "fullName": "Casey Methodist",
+              "displayName": "Casey Methodist",
+              "program": "Methodist",
+              "schoolType": "methodist",
+              "level": "PGY-3",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-06-01",
+                  "end": "2026-06-28"
+                }
+              ],
+              "rotationStartDate": "2026-06-01",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": [],
+              "methodistStartSide": "outpatient"
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "in-auto-2026-06-15-m1",
+              "date": "2026-06-15",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-16-m1",
+              "date": "2026-06-16",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-17-m1",
+              "date": "2026-06-17",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-18-m1",
+              "date": "2026-06-18",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-19-m1",
+              "date": "2026-06-19",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-20-m1",
+              "date": "2026-06-20",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-21-m1",
+              "date": "2026-06-21",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-22-m1",
+              "date": "2026-06-22",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-23-m1",
+              "date": "2026-06-23",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-24-m1",
+              "date": "2026-06-24",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-25-m1",
+              "date": "2026-06-25",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-26-m1",
+              "date": "2026-06-26",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-27-m1",
+              "date": "2026-06-27",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-28-m1",
+              "date": "2026-06-28",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            }
+          ],
+          "outpatientSessions": [
+            {
+              "id": "out-auto-2026-06-01-am-m1",
+              "date": "2026-06-01",
+              "period": "AM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-01-pm-m1",
+              "date": "2026-06-01",
+              "period": "PM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-02-am-m1",
+              "date": "2026-06-02",
+              "period": "AM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-02-pm-m1",
+              "date": "2026-06-02",
+              "period": "PM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-03-am-m1",
+              "date": "2026-06-03",
+              "period": "AM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-03-pm-m1",
+              "date": "2026-06-03",
+              "period": "PM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-04-am-m1",
+              "date": "2026-06-04",
+              "period": "AM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-04-pm-m1",
+              "date": "2026-06-04",
+              "period": "PM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-05-am-m1",
+              "date": "2026-06-05",
+              "period": "AM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-05-pm-m1",
+              "date": "2026-06-05",
+              "period": "PM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-08-am-m1",
+              "date": "2026-06-08",
+              "period": "AM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-08-pm-m1",
+              "date": "2026-06-08",
+              "period": "PM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-09-am-m1",
+              "date": "2026-06-09",
+              "period": "AM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-09-pm-m1",
+              "date": "2026-06-09",
+              "period": "PM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-10-am-m1",
+              "date": "2026-06-10",
+              "period": "AM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-10-pm-m1",
+              "date": "2026-06-10",
+              "period": "PM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-11-am-m1",
+              "date": "2026-06-11",
+              "period": "AM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-11-pm-m1",
+              "date": "2026-06-11",
+              "period": "PM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-12-am-m1",
+              "date": "2026-06-12",
+              "period": "AM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "out-auto-2026-06-12-pm-m1",
+              "date": "2026-06-12",
+              "period": "PM",
+              "clinic": "Methodist Outpatient",
+              "provider": "",
+              "rotatorId": "m1",
+              "status": "Scheduled",
+              "source": "Auto-Methodist"
+            }
+          ],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        "report": {
+          "summary": {
+            "blockName": "june",
+            "startDate": "2026-06-01",
+            "endDate": "2026-06-28",
+            "inpatientAdded": 14,
+            "outpatientAdded": 20,
+            "errorCount": 0,
+            "warningCount": 1
+          },
+          "checks": [
+            {
+              "id": "op-below-target",
+              "severity": "warning",
+              "dates": [
+                "2026-06-01",
+                "2026-06-02",
+                "2026-06-03",
+                "2026-06-04",
+                "2026-06-05",
+                "2026-06-08",
+                "2026-06-09",
+                "2026-06-10",
+                "2026-06-11",
+                "2026-06-12",
+                "2026-06-15",
+                "2026-06-16",
+                "2026-06-17",
+                "2026-06-18",
+                "2026-06-19",
+                "2026-06-22",
+                "2026-06-23",
+                "2026-06-24",
+                "2026-06-25",
+                "2026-06-26"
+              ],
+              "message": "20 clinic days (first: 2026-06-01) have fewer than 2 outpatient rotators."
+            }
+          ],
+          "unmet": []
+        }
+      }
+    },
+    {
+      "name": "methodist staffing side flip",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "june-flip",
+          "serviceBlocks": [
+            {
+              "id": "june-flip",
+              "name": "june-flip",
+              "startDate": "2026-06-01",
+              "endDate": "2026-06-30",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "holiday": {
+                  "ip": {
+                    "count": 0
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "m1",
+              "fullName": "Casey Methodist",
+              "displayName": "Casey Methodist",
+              "program": "Methodist",
+              "schoolType": "methodist",
+              "level": "PGY-3",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-06-20",
+                  "end": "2026-07-17"
+                }
+              ],
+              "rotationStartDate": "2026-06-20",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "june-flip",
+          "name": "june-flip",
+          "startDate": "2026-06-01",
+          "endDate": "2026-06-30",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [],
+          "coverage": {
+            "weekday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "saturday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "sunday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "holiday": {
+              "ip": {
+                "count": 0
+              }
+            }
+          }
+        }
+      ],
+      "output": {
+        "state": {
+          "version": 2,
+          "activeBlockId": "june-flip",
+          "serviceBlocks": [
+            {
+              "id": "june-flip",
+              "name": "june-flip",
+              "startDate": "2026-06-01",
+              "endDate": "2026-06-30",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "holiday": {
+                  "ip": {
+                    "count": 0
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "m1",
+              "fullName": "Casey Methodist",
+              "displayName": "Casey Methodist",
+              "program": "Methodist",
+              "schoolType": "methodist",
+              "level": "PGY-3",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-06-20",
+                  "end": "2026-07-17"
+                }
+              ],
+              "rotationStartDate": "2026-06-20",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": [],
+              "methodistStartSide": "inpatient"
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "in-auto-2026-06-20-m1",
+              "date": "2026-06-20",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-21-m1",
+              "date": "2026-06-21",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-22-m1",
+              "date": "2026-06-22",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-23-m1",
+              "date": "2026-06-23",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-24-m1",
+              "date": "2026-06-24",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-25-m1",
+              "date": "2026-06-25",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-26-m1",
+              "date": "2026-06-26",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-27-m1",
+              "date": "2026-06-27",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-28-m1",
+              "date": "2026-06-28",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-29-m1",
+              "date": "2026-06-29",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-30-m1",
+              "date": "2026-06-30",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            }
+          ],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        "report": {
+          "summary": {
+            "blockName": "june-flip",
+            "startDate": "2026-06-01",
+            "endDate": "2026-06-30",
+            "inpatientAdded": 11,
+            "outpatientAdded": 0,
+            "errorCount": 0,
+            "warningCount": 1
+          },
+          "checks": [
+            {
+              "id": "op-below-target",
+              "severity": "warning",
+              "dates": [
+                "2026-06-01",
+                "2026-06-02",
+                "2026-06-03",
+                "2026-06-04",
+                "2026-06-05",
+                "2026-06-08",
+                "2026-06-09",
+                "2026-06-10",
+                "2026-06-11",
+                "2026-06-12",
+                "2026-06-15",
+                "2026-06-16",
+                "2026-06-17",
+                "2026-06-18",
+                "2026-06-19",
+                "2026-06-22",
+                "2026-06-23",
+                "2026-06-24",
+                "2026-06-25",
+                "2026-06-26",
+                "2026-06-29",
+                "2026-06-30"
+              ],
+              "message": "22 clinic days (first: 2026-06-01) have fewer than 2 outpatient rotators."
+            }
+          ],
+          "unmet": []
+        }
+      }
+    },
+    {
+      "name": "length split four week peds",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "split",
+          "serviceBlocks": [
+            {
+              "id": "split",
+              "name": "split",
+              "startDate": "2026-06-01",
+              "endDate": "2026-06-28",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "holiday": {
+                  "ip": {
+                    "count": 0
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "A",
+              "displayName": "A",
+              "program": "UT Pediatrics",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-06-01",
+                  "end": "2026-06-28"
+                }
+              ],
+              "schoolType": "ut-peds",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "split",
+          "name": "split",
+          "startDate": "2026-06-01",
+          "endDate": "2026-06-28",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [],
+          "coverage": {
+            "weekday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "saturday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "sunday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "holiday": {
+              "ip": {
+                "count": 0
+              }
+            }
+          }
+        }
+      ],
+      "output": {
+        "state": {
+          "version": 2,
+          "activeBlockId": "split",
+          "serviceBlocks": [
+            {
+              "id": "split",
+              "name": "split",
+              "startDate": "2026-06-01",
+              "endDate": "2026-06-28",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "holiday": {
+                  "ip": {
+                    "count": 0
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "A",
+              "displayName": "A",
+              "program": "UT Pediatrics",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-06-01",
+                  "end": "2026-06-28"
+                }
+              ],
+              "schoolType": "ut-peds",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "in-split-2026-06-08-r1",
+              "date": "2026-06-08",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-09-r1",
+              "date": "2026-06-09",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-10-r1",
+              "date": "2026-06-10",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-11-r1",
+              "date": "2026-06-11",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-12-r1",
+              "date": "2026-06-12",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-13-r1",
+              "date": "2026-06-13",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-14-r1",
+              "date": "2026-06-14",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-15-r1",
+              "date": "2026-06-15",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-16-r1",
+              "date": "2026-06-16",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-17-r1",
+              "date": "2026-06-17",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-18-r1",
+              "date": "2026-06-18",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-19-r1",
+              "date": "2026-06-19",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-20-r1",
+              "date": "2026-06-20",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "in-split-2026-06-21-r1",
+              "date": "2026-06-21",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Split"
+            }
+          ],
+          "outpatientSessions": [
+            {
+              "id": "out-split-2026-06-01-am-r1",
+              "date": "2026-06-01",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-01-pm-r1",
+              "date": "2026-06-01",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-02-am-r1",
+              "date": "2026-06-02",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-02-pm-r1",
+              "date": "2026-06-02",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-03-am-r1",
+              "date": "2026-06-03",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-03-pm-r1",
+              "date": "2026-06-03",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-04-am-r1",
+              "date": "2026-06-04",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-04-pm-r1",
+              "date": "2026-06-04",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-05-am-r1",
+              "date": "2026-06-05",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-05-pm-r1",
+              "date": "2026-06-05",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-22-am-r1",
+              "date": "2026-06-22",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-22-pm-r1",
+              "date": "2026-06-22",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-23-am-r1",
+              "date": "2026-06-23",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-23-pm-r1",
+              "date": "2026-06-23",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-24-am-r1",
+              "date": "2026-06-24",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-24-pm-r1",
+              "date": "2026-06-24",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-25-am-r1",
+              "date": "2026-06-25",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-25-pm-r1",
+              "date": "2026-06-25",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-26-am-r1",
+              "date": "2026-06-26",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            },
+            {
+              "id": "out-split-2026-06-26-pm-r1",
+              "date": "2026-06-26",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Split"
+            }
+          ],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        "report": {
+          "summary": {
+            "blockName": "split",
+            "startDate": "2026-06-01",
+            "endDate": "2026-06-28",
+            "inpatientAdded": 14,
+            "outpatientAdded": 20,
+            "errorCount": 0,
+            "warningCount": 1
+          },
+          "checks": [
+            {
+              "id": "op-below-target",
+              "severity": "warning",
+              "dates": [
+                "2026-06-01",
+                "2026-06-02",
+                "2026-06-03",
+                "2026-06-04",
+                "2026-06-05",
+                "2026-06-08",
+                "2026-06-09",
+                "2026-06-10",
+                "2026-06-11",
+                "2026-06-12",
+                "2026-06-15",
+                "2026-06-16",
+                "2026-06-17",
+                "2026-06-18",
+                "2026-06-19",
+                "2026-06-22",
+                "2026-06-23",
+                "2026-06-24",
+                "2026-06-25",
+                "2026-06-26"
+              ],
+              "message": "20 clinic days (first: 2026-06-01) have fewer than 2 outpatient rotators."
+            }
+          ],
+          "unmet": []
+        }
+      }
+    },
+    {
+      "name": "lone fellow seeded inpatient",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "b1",
+          "serviceBlocks": [
+            {
+              "id": "b1",
+              "name": "B",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-08",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 2
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "f1",
+              "fullName": "Coordinator",
+              "displayName": "Coordinator",
+              "program": "Pediatric Neurology Fellowship",
+              "schoolType": "other",
+              "level": "Fellow",
+              "role": "Fellow",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            },
+            {
+              "id": "r1",
+              "fullName": "A",
+              "displayName": "A",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "b1",
+          "name": "B",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-08",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [],
+          "coverage": {
+            "weekday": {
+              "ip": {
+                "count": 2
+              }
+            }
+          }
+        }
+      ],
+      "output": {
+        "state": {
+          "version": 2,
+          "activeBlockId": "b1",
+          "serviceBlocks": [
+            {
+              "id": "b1",
+              "name": "B",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-08",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 2
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "f1",
+              "fullName": "Coordinator",
+              "displayName": "Coordinator",
+              "program": "Pediatric Neurology Fellowship",
+              "schoolType": "other",
+              "level": "Fellow",
+              "role": "Fellow",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            },
+            {
+              "id": "r1",
+              "fullName": "A",
+              "displayName": "A",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "in-2026-05-04-f1-fellow",
+              "date": "2026-05-04",
+              "rotatorId": "f1",
+              "role": "Fellow",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-05-f1-fellow",
+              "date": "2026-05-05",
+              "rotatorId": "f1",
+              "role": "Fellow",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-06-f1-fellow",
+              "date": "2026-05-06",
+              "rotatorId": "f1",
+              "role": "Fellow",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-07-f1-fellow",
+              "date": "2026-05-07",
+              "rotatorId": "f1",
+              "role": "Fellow",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-08-f1-fellow",
+              "date": "2026-05-08",
+              "rotatorId": "f1",
+              "role": "Fellow",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-04-r1-resident",
+              "date": "2026-05-04",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-05-r1-resident",
+              "date": "2026-05-05",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-06-r1-resident",
+              "date": "2026-05-06",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-07-r1-resident",
+              "date": "2026-05-07",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-08-r1-resident",
+              "date": "2026-05-08",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            }
+          ],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        "report": {
+          "summary": {
+            "blockName": "B",
+            "startDate": "2026-05-04",
+            "endDate": "2026-05-08",
+            "inpatientAdded": 10,
+            "outpatientAdded": 0,
+            "errorCount": 0,
+            "warningCount": 2
+          },
+          "checks": [
+            {
+              "id": "fellow-no-outpatient",
+              "severity": "warning",
+              "message": "No fellow is assigned to outpatient anywhere in this block."
+            },
+            {
+              "id": "op-below-target",
+              "severity": "warning",
+              "dates": [
+                "2026-05-04",
+                "2026-05-05",
+                "2026-05-06",
+                "2026-05-07",
+                "2026-05-08"
+              ],
+              "message": "5 clinic days (first: 2026-05-04) have fewer than 2 outpatient rotators."
+            }
+          ],
+          "unmet": []
+        }
+      }
+    },
+    {
+      "name": "two fellow candidates reported",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "b1",
+          "serviceBlocks": [
+            {
+              "id": "b1",
+              "name": "B",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-08",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 1
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "f1",
+              "fullName": "Coordinator",
+              "displayName": "Coordinator",
+              "program": "Pediatric Neurology Fellowship",
+              "schoolType": "other",
+              "level": "Fellow",
+              "role": "Fellow",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            },
+            {
+              "id": "f2",
+              "fullName": "Eden",
+              "displayName": "Eden",
+              "program": "Pediatric Neurology Fellowship",
+              "schoolType": "other",
+              "level": "Fellow",
+              "role": "Fellow",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "b1",
+          "name": "B",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-08",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [],
+          "coverage": {
+            "weekday": {
+              "ip": {
+                "count": 1
+              }
+            }
+          }
+        }
+      ],
+      "output": {
+        "state": {
+          "version": 2,
+          "activeBlockId": "b1",
+          "serviceBlocks": [
+            {
+              "id": "b1",
+              "name": "B",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-08",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 1
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "f1",
+              "fullName": "Coordinator",
+              "displayName": "Coordinator",
+              "program": "Pediatric Neurology Fellowship",
+              "schoolType": "other",
+              "level": "Fellow",
+              "role": "Fellow",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            },
+            {
+              "id": "f2",
+              "fullName": "Eden",
+              "displayName": "Eden",
+              "program": "Pediatric Neurology Fellowship",
+              "schoolType": "other",
+              "level": "Fellow",
+              "role": "Fellow",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-08"
+                }
+              ],
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        "report": {
+          "summary": {
+            "blockName": "B",
+            "startDate": "2026-05-04",
+            "endDate": "2026-05-08",
+            "inpatientAdded": 0,
+            "outpatientAdded": 0,
+            "errorCount": 5,
+            "warningCount": 4
+          },
+          "checks": [
+            {
+              "id": "ip-below-min",
+              "severity": "error",
+              "date": "2026-05-04",
+              "required": 1,
+              "have": 0,
+              "message": "2026-05-04: inpatient is staffed by 0, needs 1."
+            },
+            {
+              "id": "ip-below-min",
+              "severity": "error",
+              "date": "2026-05-05",
+              "required": 1,
+              "have": 0,
+              "message": "2026-05-05: inpatient is staffed by 0, needs 1."
+            },
+            {
+              "id": "ip-below-min",
+              "severity": "error",
+              "date": "2026-05-06",
+              "required": 1,
+              "have": 0,
+              "message": "2026-05-06: inpatient is staffed by 0, needs 1."
+            },
+            {
+              "id": "ip-below-min",
+              "severity": "error",
+              "date": "2026-05-07",
+              "required": 1,
+              "have": 0,
+              "message": "2026-05-07: inpatient is staffed by 0, needs 1."
+            },
+            {
+              "id": "ip-below-min",
+              "severity": "error",
+              "date": "2026-05-08",
+              "required": 1,
+              "have": 0,
+              "message": "2026-05-08: inpatient is staffed by 0, needs 1."
+            },
+            {
+              "id": "fellow-no-inpatient",
+              "severity": "warning",
+              "message": "No fellow is assigned to inpatient anywhere in this block."
+            },
+            {
+              "id": "fellow-no-outpatient",
+              "severity": "warning",
+              "message": "No fellow is assigned to outpatient anywhere in this block."
+            },
+            {
+              "id": "fellow-blank-candidates",
+              "severity": "warning",
+              "candidates": [
+                "Coordinator",
+                "Eden"
+              ],
+              "dates": [
+                "2026-05-04",
+                "2026-05-05",
+                "2026-05-06",
+                "2026-05-07",
+                "2026-05-08"
+              ],
+              "message": "5 days (2026-05-04 – 2026-05-08) need a fellow: pick Coordinator / Eden on the Fellows page."
+            },
+            {
+              "id": "op-below-target",
+              "severity": "warning",
+              "dates": [
+                "2026-05-04",
+                "2026-05-05",
+                "2026-05-06",
+                "2026-05-07",
+                "2026-05-08"
+              ],
+              "message": "5 clinic days (first: 2026-05-04) have fewer than 2 outpatient rotators."
+            }
+          ],
+          "unmet": [
+            {
+              "date": "2026-05-04",
+              "reason": "No eligible resident available on 2026-05-04 (1 short)",
+              "short": 1
+            },
+            {
+              "date": "2026-05-05",
+              "reason": "No eligible resident available on 2026-05-05 (1 short)",
+              "short": 1
+            },
+            {
+              "date": "2026-05-06",
+              "reason": "No eligible resident available on 2026-05-06 (1 short)",
+              "short": 1
+            },
+            {
+              "date": "2026-05-07",
+              "reason": "No eligible resident available on 2026-05-07 (1 short)",
+              "short": 1
+            },
+            {
+              "date": "2026-05-08",
+              "reason": "No eligible resident available on 2026-05-08 (1 short)",
+              "short": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "outpatient segment never drafted inpatient and weekend gets a day off",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "wknd",
+          "serviceBlocks": [
+            {
+              "id": "wknd",
+              "name": "wknd",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-10",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 1
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 1
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 1
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "OutpatientOnly",
+              "displayName": "OutpatientOnly",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-10",
+                  "defaultPhase": "outpatient"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            },
+            {
+              "id": "r2",
+              "fullName": "B",
+              "displayName": "B",
+              "program": "Other",
+              "level": "PGY-3",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-10"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            },
+            {
+              "id": "r3",
+              "fullName": "C",
+              "displayName": "C",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-10"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "wknd",
+          "name": "wknd",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-10",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [],
+          "coverage": {
+            "weekday": {
+              "ip": {
+                "count": 1
+              }
+            },
+            "saturday": {
+              "ip": {
+                "count": 1
+              }
+            },
+            "sunday": {
+              "ip": {
+                "count": 1
+              }
+            }
+          }
+        }
+      ],
+      "output": {
+        "state": {
+          "version": 2,
+          "activeBlockId": "wknd",
+          "serviceBlocks": [
+            {
+              "id": "wknd",
+              "name": "wknd",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-10",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 1
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 1
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 1
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "OutpatientOnly",
+              "displayName": "OutpatientOnly",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-10",
+                  "defaultPhase": "outpatient"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            },
+            {
+              "id": "r2",
+              "fullName": "B",
+              "displayName": "B",
+              "program": "Other",
+              "level": "PGY-3",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-10"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            },
+            {
+              "id": "r3",
+              "fullName": "C",
+              "displayName": "C",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-10"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "in-2026-05-04-r2-resident",
+              "date": "2026-05-04",
+              "rotatorId": "r2",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-05-r3-resident",
+              "date": "2026-05-05",
+              "rotatorId": "r3",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-06-r2-resident",
+              "date": "2026-05-06",
+              "rotatorId": "r2",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-07-r3-resident",
+              "date": "2026-05-07",
+              "rotatorId": "r3",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-08-r2-resident",
+              "date": "2026-05-08",
+              "rotatorId": "r2",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-09-r3-resident",
+              "date": "2026-05-09",
+              "rotatorId": "r3",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "in-2026-05-10-r2-resident",
+              "date": "2026-05-10",
+              "rotatorId": "r2",
+              "role": "Resident",
+              "source": "Auto-Draft"
+            }
+          ],
+          "outpatientSessions": [
+            {
+              "id": "out-fill-2026-05-04-am-r1",
+              "date": "2026-05-04",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-04-pm-r1",
+              "date": "2026-05-04",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-04-am-r3",
+              "date": "2026-05-04",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r3",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-04-pm-r3",
+              "date": "2026-05-04",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r3",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-05-am-r2",
+              "date": "2026-05-05",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r2",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-05-pm-r2",
+              "date": "2026-05-05",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r2",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-05-am-r1",
+              "date": "2026-05-05",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-05-pm-r1",
+              "date": "2026-05-05",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-06-am-r3",
+              "date": "2026-05-06",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r3",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-06-pm-r3",
+              "date": "2026-05-06",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r3",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-06-am-r1",
+              "date": "2026-05-06",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-06-pm-r1",
+              "date": "2026-05-06",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-07-am-r2",
+              "date": "2026-05-07",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r2",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-07-pm-r2",
+              "date": "2026-05-07",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r2",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-07-am-r1",
+              "date": "2026-05-07",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-07-pm-r1",
+              "date": "2026-05-07",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-08-am-r3",
+              "date": "2026-05-08",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r3",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-08-pm-r3",
+              "date": "2026-05-08",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r3",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-08-am-r1",
+              "date": "2026-05-08",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-08-pm-r1",
+              "date": "2026-05-08",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            }
+          ],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        "report": {
+          "summary": {
+            "blockName": "wknd",
+            "startDate": "2026-05-04",
+            "endDate": "2026-05-10",
+            "inpatientAdded": 7,
+            "outpatientAdded": 20,
+            "errorCount": 0,
+            "warningCount": 0
+          },
+          "checks": [],
+          "unmet": []
+        }
+      }
+    },
+    {
+      "name": "derived start methodist gets smart start side",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "derived",
+          "serviceBlocks": [
+            {
+              "id": "derived",
+              "name": "derived",
+              "startDate": "2026-06-01",
+              "endDate": "2026-06-14",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "holiday": {
+                  "ip": {
+                    "count": 0
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "m1",
+              "fullName": "Casey Methodist",
+              "displayName": "Casey Methodist",
+              "program": "Methodist",
+              "schoolType": "methodist",
+              "level": "PGY-3",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-06-01",
+                  "end": "2026-06-28"
+                }
+              ],
+              "rotationStartDate": null,
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "derived",
+          "name": "derived",
+          "startDate": "2026-06-01",
+          "endDate": "2026-06-14",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [],
+          "coverage": {
+            "weekday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "saturday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "sunday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "holiday": {
+              "ip": {
+                "count": 0
+              }
+            }
+          }
+        }
+      ],
+      "output": {
+        "state": {
+          "version": 2,
+          "activeBlockId": "derived",
+          "serviceBlocks": [
+            {
+              "id": "derived",
+              "name": "derived",
+              "startDate": "2026-06-01",
+              "endDate": "2026-06-14",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "holiday": {
+                  "ip": {
+                    "count": 0
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "m1",
+              "fullName": "Casey Methodist",
+              "displayName": "Casey Methodist",
+              "program": "Methodist",
+              "schoolType": "methodist",
+              "level": "PGY-3",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-06-01",
+                  "end": "2026-06-28"
+                }
+              ],
+              "rotationStartDate": null,
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": [],
+              "methodistStartSide": "inpatient"
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "in-auto-2026-06-01-m1",
+              "date": "2026-06-01",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-02-m1",
+              "date": "2026-06-02",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-03-m1",
+              "date": "2026-06-03",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-04-m1",
+              "date": "2026-06-04",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-05-m1",
+              "date": "2026-06-05",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-06-m1",
+              "date": "2026-06-06",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-07-m1",
+              "date": "2026-06-07",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-08-m1",
+              "date": "2026-06-08",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-09-m1",
+              "date": "2026-06-09",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-10-m1",
+              "date": "2026-06-10",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-11-m1",
+              "date": "2026-06-11",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-12-m1",
+              "date": "2026-06-12",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-13-m1",
+              "date": "2026-06-13",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            },
+            {
+              "id": "in-auto-2026-06-14-m1",
+              "date": "2026-06-14",
+              "rotatorId": "m1",
+              "role": "Resident",
+              "source": "Auto-Methodist"
+            }
+          ],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        "report": {
+          "summary": {
+            "blockName": "derived",
+            "startDate": "2026-06-01",
+            "endDate": "2026-06-14",
+            "inpatientAdded": 14,
+            "outpatientAdded": 0,
+            "errorCount": 0,
+            "warningCount": 1
+          },
+          "checks": [
+            {
+              "id": "methodist-derived-start",
+              "severity": "info",
+              "rotatorId": "m1",
+              "message": "Casey Methodist has no explicit rotation start date — using their first scheduled day (2026-06-01) as day 1 of a 14/14 inpatient/outpatient split."
+            },
+            {
+              "id": "op-below-target",
+              "severity": "warning",
+              "dates": [
+                "2026-06-01",
+                "2026-06-02",
+                "2026-06-03",
+                "2026-06-04",
+                "2026-06-05",
+                "2026-06-08",
+                "2026-06-09",
+                "2026-06-10",
+                "2026-06-11",
+                "2026-06-12"
+              ],
+              "message": "10 clinic days (first: 2026-06-01) have fewer than 2 outpatient rotators."
+            }
+          ],
+          "unmet": []
+        }
+      }
+    },
+    {
+      "name": "report sandwich warning",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "sandwich",
+          "serviceBlocks": [
+            {
+              "id": "sandwich",
+              "name": "sandwich",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-24",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "holiday": {
+                  "ip": {
+                    "count": 0
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "A",
+              "displayName": "A",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-24"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "i-2026-05-11",
+              "date": "2026-05-11",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            },
+            {
+              "id": "i-2026-05-12",
+              "date": "2026-05-12",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            },
+            {
+              "id": "i-2026-05-13",
+              "date": "2026-05-13",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            },
+            {
+              "id": "i-2026-05-14",
+              "date": "2026-05-14",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            },
+            {
+              "id": "i-2026-05-15",
+              "date": "2026-05-15",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            }
+          ],
+          "outpatientSessions": [
+            {
+              "id": "o-2026-05-05",
+              "date": "2026-05-05",
+              "period": "AM",
+              "clinic": "QRS",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            },
+            {
+              "id": "o-2026-05-06",
+              "date": "2026-05-06",
+              "period": "AM",
+              "clinic": "QRS",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            },
+            {
+              "id": "o-2026-05-19",
+              "date": "2026-05-19",
+              "period": "AM",
+              "clinic": "QRS",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            },
+            {
+              "id": "o-2026-05-20",
+              "date": "2026-05-20",
+              "period": "AM",
+              "clinic": "QRS",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            }
+          ],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "sandwich",
+          "name": "sandwich",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-24",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [],
+          "coverage": {
+            "weekday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "saturday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "sunday": {
+              "ip": {
+                "count": 0
+              }
+            },
+            "holiday": {
+              "ip": {
+                "count": 0
+              }
+            }
+          }
+        }
+      ],
+      "output": {
+        "state": {
+          "version": 2,
+          "activeBlockId": "sandwich",
+          "serviceBlocks": [
+            {
+              "id": "sandwich",
+              "name": "sandwich",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-24",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [],
+              "coverage": {
+                "weekday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "saturday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "sunday": {
+                  "ip": {
+                    "count": 0
+                  }
+                },
+                "holiday": {
+                  "ip": {
+                    "count": 0
+                  }
+                }
+              }
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "A",
+              "displayName": "A",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-24"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "i-2026-05-11",
+              "date": "2026-05-11",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            },
+            {
+              "id": "i-2026-05-12",
+              "date": "2026-05-12",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            },
+            {
+              "id": "i-2026-05-13",
+              "date": "2026-05-13",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            },
+            {
+              "id": "i-2026-05-14",
+              "date": "2026-05-14",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            },
+            {
+              "id": "i-2026-05-15",
+              "date": "2026-05-15",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            }
+          ],
+          "outpatientSessions": [
+            {
+              "id": "o-2026-05-05",
+              "date": "2026-05-05",
+              "period": "AM",
+              "clinic": "QRS",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            },
+            {
+              "id": "o-2026-05-06",
+              "date": "2026-05-06",
+              "period": "AM",
+              "clinic": "QRS",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            },
+            {
+              "id": "o-2026-05-19",
+              "date": "2026-05-19",
+              "period": "AM",
+              "clinic": "QRS",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            },
+            {
+              "id": "o-2026-05-20",
+              "date": "2026-05-20",
+              "period": "AM",
+              "clinic": "QRS",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            },
+            {
+              "id": "out-fill-2026-05-04-am-r1",
+              "date": "2026-05-04",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-04-pm-r1",
+              "date": "2026-05-04",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-07-am-r1",
+              "date": "2026-05-07",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-07-pm-r1",
+              "date": "2026-05-07",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-08-am-r1",
+              "date": "2026-05-08",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-08-pm-r1",
+              "date": "2026-05-08",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-18-am-r1",
+              "date": "2026-05-18",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-18-pm-r1",
+              "date": "2026-05-18",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-21-am-r1",
+              "date": "2026-05-21",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-21-pm-r1",
+              "date": "2026-05-21",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-22-am-r1",
+              "date": "2026-05-22",
+              "period": "AM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            },
+            {
+              "id": "out-fill-2026-05-22-pm-r1",
+              "date": "2026-05-22",
+              "period": "PM",
+              "clinic": "Outpatient (clinic TBD)",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Auto-Draft"
+            }
+          ],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        "report": {
+          "summary": {
+            "blockName": "sandwich",
+            "startDate": "2026-05-04",
+            "endDate": "2026-05-24",
+            "inpatientAdded": 0,
+            "outpatientAdded": 12,
+            "errorCount": 0,
+            "warningCount": 2
+          },
+          "checks": [
+            {
+              "id": "op-below-target",
+              "severity": "warning",
+              "dates": [
+                "2026-05-04",
+                "2026-05-05",
+                "2026-05-06",
+                "2026-05-07",
+                "2026-05-08",
+                "2026-05-11",
+                "2026-05-12",
+                "2026-05-13",
+                "2026-05-14",
+                "2026-05-15",
+                "2026-05-18",
+                "2026-05-19",
+                "2026-05-20",
+                "2026-05-21",
+                "2026-05-22"
+              ],
+              "message": "15 clinic days (first: 2026-05-04) have fewer than 2 outpatient rotators."
+            },
+            {
+              "id": "five-week-sandwich",
+              "severity": "warning",
+              "rotatorId": "r1",
+              "message": "A has a single inpatient week sandwiched between outpatient weeks — keep inpatient weeks consecutive."
+            }
+          ],
+          "unmet": []
+        }
+      }
+    }
+  ]
+}

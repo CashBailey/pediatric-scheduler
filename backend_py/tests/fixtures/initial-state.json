@@ -1,0 +1,95 @@
+{
+  "version": 2,
+  "activeBlockId": "block-new",
+  "serviceBlocks": [
+    {
+      "id": "block-new",
+      "name": "New rotation block",
+      "startDate": "2026-01-01",
+      "endDate": "2026-01-28",
+      "status": "Draft",
+      "generate": {
+        "inpatient": true,
+        "outpatient": true,
+        "dailyReport": true,
+        "legend": true,
+        "export": true
+      },
+      "holidays": []
+    }
+  ],
+  "sources": [],
+  "rotators": [],
+  "attendings": [
+    {
+      "name": "Alder",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Birch",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Gum",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Dogwood",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Cedar",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Elm",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Hazel",
+      "recurringClinics": [],
+      "oneOffDates": []
+    }
+  ],
+  "expectedSourcePrograms": [
+    "Methodist",
+    "UT Adult Neuro",
+    "UT Pediatrics",
+    "UT Pediatric Neurology Fellow",
+    "UT Med Student",
+    "UT Psychiatry",
+    "Other"
+  ],
+  "inpatientAssignments": [],
+  "outpatientSessions": [],
+  "halfDayFacts": [],
+  "clinicAssignments": [],
+  "posterSettings": {
+    "programName": "Pediatric Neurology Residency",
+    "chief": "",
+    "notes": [
+      "Please arrive 15 minutes before clinic starts.",
+      "Check Epic for patient lists and clinic location details.",
+      "Notify the chief of any schedule conflicts as soon as possible.",
+      "This schedule is subject to change."
+    ],
+    "locations": [
+      {
+        "name": "Main Campus",
+        "address": ""
+      }
+    ],
+    "tagline": "Thank you for all you do for our patients!"
+  },
+  "rules": {
+    "maxConsecutiveInpatientDays": 6,
+    "honorNoClinicHolidays": true
+  },
+  "notes": []
+}

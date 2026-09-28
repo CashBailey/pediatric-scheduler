@@ -1,0 +1,205 @@
+.ip-sched-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ip-sched-subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.ip-sched-empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.ip-sched-section {
+  margin-top: 24px;
+}
+
+.ip-sched-section h3 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+}
+
+/* --- Tones (shared by heatmap cells and legend swatches) --- */
+/* Intentional semantic badges: a pastel-bg + dark-text severity scale that reads
+   in BOTH themes, so these are deliberately NOT tokenized to the dark palette.
+   (If we ever want dark-native staffing tones, retone all four together.) */
+.ip-sched-tone-critical {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #7f1d1d;
+}
+.ip-sched-tone-below {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #78350f;
+}
+.ip-sched-tone-full {
+  background: #dcfce7;
+  border-color: #22c55e;
+  color: #14532d;
+}
+.ip-sched-tone-surplus {
+  background: #bfdbfe;
+  border-color: #2563eb;
+  color: #1e3a8a;
+}
+
+/* --- Legend --- */
+.ip-sched-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.ip-sched-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.ip-sched-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid;
+  display: inline-block;
+}
+
+/* --- Heatmap --- */
+.ip-sched-heatmap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ip-sched-heat-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  min-height: 64px;
+  padding: 6px 4px;
+  border-radius: 6px;
+  border: 1px solid;
+  text-align: center;
+}
+.ip-sched-heat-dow {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+}
+.ip-sched-heat-date {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.ip-sched-heat-count {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* --- Continuity timeline --- */
+.ip-sched-timeline-scroll {
+  overflow-x: auto;
+}
+.ip-sched-timeline {
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+.ip-sched-timeline th,
+.ip-sched-timeline td {
+  border: 1px solid var(--line);
+}
+.ip-sched-tl-name {
+  text-align: left;
+  padding: 4px 10px;
+  white-space: nowrap;
+  position: sticky;
+  left: 0;
+  /* themed so the sticky name column is readable in dark mode (was #f8fafc with
+     no color -> near-white text on near-white bg). --surface keeps light mode as
+     the original near-white. */
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ip-sched-tl-col {
+  padding: 4px 2px;
+  min-width: 26px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.ip-sched-tl-cell {
+  width: 26px;
+  height: 22px;
+}
+.ip-sched-tl-on {
+  background: #2563eb;
+}
+
+/* --- Daily roster cards --- */
+.ip-sched-roster {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+.ip-sched-roster-card {
+  /* themed card: was a hardcoded white (#fff) box, so on the dark theme the day
+     name + roster names (which inherit --text, near-white) were invisible. In
+     light mode --surface is #fff, so light is unchanged; dark gets a real card. */
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: var(--surface);
+}
+.ip-sched-roster-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 6px;
+}
+.ip-sched-roster-dow {
+  font-weight: 700;
+}
+.ip-sched-roster-date {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.ip-sched-roster-holiday {
+  margin-left: auto;
+  font-size: 0.72rem;
+  background: #fef3c7;
+  color: #78350f;
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+.ip-sched-roster-empty {
+  margin: 0;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+.ip-sched-roster-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.85rem;
+}
+.ip-sched-roster-meta {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}

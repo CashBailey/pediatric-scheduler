@@ -1,0 +1,8 @@
+# Runtime dependencies for the Python scheduler backend.
+# Pinned for reproducible local + Docker builds. Direct deps only;
+# transitive deps are resolved by pip. Regenerate the pin set from a
+# clean venv with `pip install` + `pip freeze` if you bump these.
+fastapi==0.128.8
+uvicorn[standard]==0.39.0
+jsonschema==4.25.1
+python-docx==1.2.0

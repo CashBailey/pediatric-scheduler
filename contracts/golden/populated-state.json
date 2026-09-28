@@ -1,0 +1,180 @@
+{
+  "version": 2,
+  "activeBlockId": "block-new",
+  "serviceBlocks": [
+    {
+      "id": "block-new",
+      "name": "New rotation block",
+      "startDate": "2026-01-01",
+      "endDate": "2026-01-28",
+      "status": "Draft",
+      "generate": {
+        "inpatient": true,
+        "outpatient": true,
+        "dailyReport": true,
+        "legend": true,
+        "export": true
+      },
+      "holidays": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-roster-populated-1",
+      "importedAt": "2026-01-05",
+      "status": "Reviewed",
+      "program": "Pediatric Neurology",
+      "fileName": "roster.xlsx",
+      "fileType": "xlsx",
+      "content": "",
+      "parsedRows": [
+        {
+          "fullName": "Jordan Example",
+          "program": "Pediatric Neurology"
+        }
+      ],
+      "importedRotatorCount": 1,
+      "importWarningCount": 1,
+      "importWarnings": [
+        "Row 3: missing level, defaulted to PGY-3"
+      ]
+    }
+  ],
+  "rotators": [
+    {
+      "id": "rotator-populated-1",
+      "fullName": "Jordan Example",
+      "displayName": "Jordan E.",
+      "program": "Pediatric Neurology",
+      "level": "PGY-3",
+      "role": "Resident",
+      "segments": [
+        {
+          "start": "2026-01-05",
+          "end": "2026-01-30",
+          "defaultPhase": "inpatient"
+        }
+      ],
+      "schoolType": "ut-peds",
+      "continuityClinic": "Tuesday PM",
+      "dayOff": [
+        "Saturday"
+      ],
+      "unavailableRanges": [
+        {
+          "start": "2026-01-19",
+          "end": "2026-01-19",
+          "label": "Holiday"
+        }
+      ]
+    }
+  ],
+  "attendings": [
+    {
+      "name": "Alder",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Birch",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Gum",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Dogwood",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Cedar",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Elm",
+      "recurringClinics": [],
+      "oneOffDates": []
+    },
+    {
+      "name": "Hazel",
+      "recurringClinics": [],
+      "oneOffDates": []
+    }
+  ],
+  "expectedSourcePrograms": [
+    "Methodist",
+    "UT Adult Neuro",
+    "UT Pediatrics",
+    "UT Pediatric Neurology Fellow",
+    "UT Med Student",
+    "UT Psychiatry",
+    "Other"
+  ],
+  "inpatientAssignments": [
+    {
+      "id": "ip-populated-1",
+      "date": "2026-01-06",
+      "rotatorId": "rotator-populated-1",
+      "role": "Primary",
+      "source": "manual"
+    }
+  ],
+  "outpatientSessions": [
+    {
+      "id": "op-populated-1",
+      "date": "2026-01-07",
+      "period": "AM",
+      "clinic": "General Clinic",
+      "provider": "Dr. Attending",
+      "rotatorId": "rotator-populated-1",
+      "status": "confirmed"
+    }
+  ],
+  "halfDayFacts": [
+    {
+      "id": "hdf-populated-1",
+      "date": "2026-01-08",
+      "period": "PM",
+      "rotatorId": "rotator-populated-1",
+      "kind": "inpatient",
+      "status": "IP",
+      "label": "IP (PM)",
+      "source": "coordinator-master",
+      "sourceText": "IP!"
+    }
+  ],
+  "clinicAssignments": [
+    {
+      "id": "clinic-assign::occ-1::rotator-populated-1",
+      "clinicOccurrenceId": "occ-1",
+      "rotatorId": "rotator-populated-1",
+      "date": "2026-01-13",
+      "session": "PM",
+      "source": "manual"
+    }
+  ],
+  "posterSettings": {
+    "programName": "Pediatric Neurology Residency",
+    "chief": "Dr. Chief Example",
+    "notes": [
+      "Please arrive 15 minutes before clinic starts."
+    ],
+    "locations": [
+      {
+        "name": "Main Campus",
+        "address": "123 Example Way"
+      }
+    ],
+    "tagline": "Thank you for all you do for our patients!"
+  },
+  "rules": {
+    "maxConsecutiveInpatientDays": 6,
+    "honorNoClinicHolidays": true
+  },
+  "notes": []
+}

@@ -1,0 +1,6 @@
+# Dev/test dependencies. Installs the runtime set plus the test toolchain.
+#   python3 -m venv backend_py/.venv
+#   backend_py/.venv/bin/pip install -r backend_py/requirements-dev.txt
+-r requirements.txt
+pytest==8.4.2
+httpx==0.28.1  # required by fastapi.testclient.TestClient

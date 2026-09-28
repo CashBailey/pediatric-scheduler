@@ -1,0 +1,46 @@
+{
+  "name": "pedi-scheduler-react",
+  "version": "0.29.0",
+  "private": true,
+  "description": "Local-only Pediatric Neurology Scheduler with native macOS and legacy React frontends",
+  "type": "module",
+  "bin": {
+    "schedulerctl": "scripts/schedulerctl.mjs"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "server": "backend_py/.venv/bin/python -m backend_py.run",
+    "test": "vitest run",
+    "test:offline": "node --test tests/*.test.mjs",
+    "test:py": "backend_py/run-tests.sh",
+    "check:graphify": "node scripts/check_graphify_outputs.mjs",
+    "verify:cli": "backend_py/.venv/bin/python scripts/run_cli_probes.py",
+    "verify:native": "bash script/build_and_run.sh --verify",
+    "package:native": "bash script/build_and_run.sh --package",
+    "e2e:audit": "node e2e/run-browser-audit.mjs",
+    "e2e:native": "node e2e/run-native-ui-audit.mjs",
+    "verify:project": "bash scripts/run_project_verification.sh",
+    "ctl": "node scripts/schedulerctl.mjs"
+  },
+  "dependencies": {
+    "@dnd-kit/react": "^0.4.0",
+    "@vitejs/plugin-react": "^5.1.1",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.8",
+    "lucide-react": "^0.561.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "vite": "^7.3.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "jsdom": "^27.3.0",
+    "vitest": "^4.0.16"
+  }
+}

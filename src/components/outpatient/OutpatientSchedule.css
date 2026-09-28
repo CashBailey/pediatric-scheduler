@@ -1,0 +1,122 @@
+.op-sched-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.op-sched-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.op-sched-week-select {
+  padding: 6px 8px;
+  border: 1px solid var(--line, #d1d5db);
+  border-radius: 6px;
+  /* Theme-aware: a hardcoded #fff background with no `color` rendered as
+     light-inherited-text on white in dark mode (invisible). */
+  background: var(--surface, #fff);
+  color: var(--text, #1d261b);
+  font-size: 13px;
+}
+.op-sched-subtitle {
+  margin: 2px 0 0;
+  color: var(--muted, #6b7280);
+  font-size: 13px;
+}
+.op-sched-empty,
+.op-sched-none {
+  color: var(--muted, #6b7280);
+  font-style: italic;
+}
+.op-sched-section {
+  margin-top: 20px;
+}
+.op-sched-section h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+/* Warnings */
+.op-sched-warnings {
+  border: 1px solid #f0c36d;
+  background: rgba(240, 195, 109, 0.08);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+}
+.op-sched-warnings h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+.op-sched-warn-group { margin-top: 8px; }
+.op-sched-warn-list { margin: 4px 0 0; padding-left: 18px; }
+.op-sched-warn { font-size: 13px; }
+/* Theme-aware semantic colors. The old dark hexes (#b42318 / #92610a) sat on
+   the dark --surface in dark mode (dark-on-dark, failing WCAG); --danger /
+   --warning resolve to readable bright variants per theme. */
+.op-sched-warn-critical { color: var(--danger, #b42318); }
+.op-sched-warn-amber { color: var(--warning, #92610a); }
+
+/* By date / session */
+.op-sched-days {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+.op-sched-day {
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.op-sched-day-label { font-weight: 600; margin-bottom: 6px; }
+.op-sched-session {
+  display: flex;
+  gap: 8px;
+  padding: 4px 0;
+  border-top: 1px dashed var(--line, #e5e7eb);
+}
+.op-sched-session-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted, #6b7280);
+  min-width: 24px;
+}
+.op-sched-session-body { flex: 1; }
+.op-sched-occ {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+.op-sched-occ-clinic { font-size: 13px; font-weight: 600; }
+.op-sched-occ-rotators { font-size: 12px; color: var(--muted, #6b7280); }
+.op-sched-uncovered { color: var(--danger, #b42318); }
+
+/* By rotator */
+.op-sched-rotators {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+.op-sched-rotator {
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.op-sched-rotator-name {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.op-sched-rotator-meta { font-size: 11px; color: var(--muted, #6b7280); font-weight: 400; }
+.op-sched-rotator-none { font-size: 12px; color: var(--warning, #92610a); font-style: italic; }
+.op-sched-stops { margin: 6px 0 0; padding-left: 16px; }
+.op-sched-stop { font-size: 13px; }
+.op-sched-stale { color: var(--danger, #b42318); }

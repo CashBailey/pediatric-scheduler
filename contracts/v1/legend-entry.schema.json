@@ -1,0 +1,32 @@
+{
+  "$id": "legend-entry.v1",
+  "type": "object",
+  "required": [
+    "number",
+    "rotatorId",
+    "displayLabel",
+    "dateRange",
+    "continuityClinic"
+  ],
+  "properties": {
+    "number": {
+      "type": [
+        "integer",
+        "string"
+      ]
+    },
+    "rotatorId": {
+      "type": "string"
+    },
+    "displayLabel": {
+      "type": "string"
+    },
+    "dateRange": {
+      "type": "string"
+    },
+    "continuityClinic": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,205 @@
+{
+  "columnSynonyms": {
+    "fullName": [
+      "name",
+      "full name",
+      "rotator",
+      "rotator name",
+      "provider",
+      "provider name",
+      "resident",
+      "resident name",
+      "trainee"
+    ],
+    "program": [
+      "program",
+      "service",
+      "track",
+      "rotation",
+      "department"
+    ],
+    "level": [
+      "level",
+      "pgy",
+      "pgy level",
+      "year",
+      "training level",
+      "role"
+    ],
+    "startDate": [
+      "start",
+      "start date",
+      "startdate",
+      "begin",
+      "begins",
+      "from",
+      "rotation start",
+      "service start",
+      "block start",
+      "on service",
+      "on service date",
+      "on service start",
+      "starts",
+      "first day",
+      "starting",
+      "starting date",
+      "from date",
+      "arrival",
+      "arrival date",
+      "in",
+      "in date"
+    ],
+    "endDate": [
+      "end",
+      "end date",
+      "enddate",
+      "finish",
+      "finishes",
+      "to",
+      "thru",
+      "through",
+      "rotation end",
+      "service end",
+      "block end",
+      "off service",
+      "off service date",
+      "off service end",
+      "ends",
+      "last day",
+      "ending",
+      "ending date",
+      "to date",
+      "departure",
+      "departure date",
+      "out",
+      "out date"
+    ],
+    "continuityClinic": [
+      "continuity clinic",
+      "clinic",
+      "continuity",
+      "clinic day"
+    ],
+    "dayOff": [
+      "day off",
+      "days off",
+      "off day",
+      "off days"
+    ],
+    "unavailableRanges": [
+      "unavailable",
+      "unavailable dates",
+      "out",
+      "out of office",
+      "ooo",
+      "away",
+      "leave"
+    ],
+    "rotationStartDate": [
+      "methodist start",
+      "methodist start date",
+      "methodist rotation start",
+      "cycle start",
+      "14 14 start",
+      "methodist rotation start date"
+    ]
+  },
+  "programAliases": {
+    "methodist adult neurology": "Methodist",
+    "methodist adult neuro": "Methodist",
+    "adult neurology": "UT Adult Neuro",
+    "adult neuro": "UT Adult Neuro",
+    "pediatrics rotators template format corrected years": "UT Pediatrics",
+    "ut houston adult neurology": "UT Adult Neuro",
+    "ut adult neurology": "UT Adult Neuro",
+    "ut houston pediatrics": "UT Pediatrics",
+    "ut houston pediatric": "UT Pediatrics",
+    "ut pediatric neurology": "UT Pediatrics",
+    "ut pediatric neuro": "UT Pediatrics",
+    "pediatric neurology": "UT Pediatrics",
+    "pedi neuro": "UT Pediatrics",
+    "ut pediatric neurology fellow": "UT Pediatric Neurology Fellow",
+    "pediatric neurology fellow": "UT Pediatric Neurology Fellow",
+    "pediatric neurology fellowship": "UT Pediatric Neurology Fellow",
+    "pedi neuro fellow": "UT Pediatric Neurology Fellow",
+    "peds fellow": "UT Pediatric Neurology Fellow",
+    "ut houston psychiatry intern": "UT Psychiatry",
+    "ut houston psychiatry": "UT Psychiatry",
+    "uth child psychiatry fellow": "UT Psychiatry",
+    "child psychiatry fellow": "UT Psychiatry"
+  },
+  "weekdayAliases": [
+    {
+      "canonical": "Sunday",
+      "aliases": [
+        "sun",
+        "sunday"
+      ]
+    },
+    {
+      "canonical": "Monday",
+      "aliases": [
+        "mon",
+        "monday"
+      ]
+    },
+    {
+      "canonical": "Tuesday",
+      "aliases": [
+        "tue",
+        "tues",
+        "tuesday"
+      ]
+    },
+    {
+      "canonical": "Wednesday",
+      "aliases": [
+        "wed",
+        "weds",
+        "wednesday"
+      ]
+    },
+    {
+      "canonical": "Thursday",
+      "aliases": [
+        "thu",
+        "thur",
+        "thurs",
+        "thursday"
+      ]
+    },
+    {
+      "canonical": "Friday",
+      "aliases": [
+        "fri",
+        "friday"
+      ]
+    },
+    {
+      "canonical": "Saturday",
+      "aliases": [
+        "sat",
+        "saturday"
+      ]
+    }
+  ],
+  "matrixPresentMarks": [
+    "B",
+    "!B"
+  ],
+  "matrixBangBehaviors": [
+    "present",
+    "exclude"
+  ],
+  "defaultMatrixBangBehavior": "present",
+  "rosterFileExtensions": [
+    ".csv",
+    ".json",
+    ".xlsx",
+    ".xlsm"
+  ],
+  "browserExcelExtensions": [
+    ".xlsx",
+    ".xlsm"
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "$id": "attending.v1",
+  "type": "object",
+  "required": [
+    "name",
+    "recurringClinics",
+    "oneOffDates"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "recurringClinics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "weekday": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string",
+            "enum": [
+              "AM",
+              "PM"
+            ]
+          },
+          "session": {
+            "type": "string",
+            "enum": [
+              "AM",
+              "PM"
+            ]
+          },
+          "clinicName": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "capacity": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "allowedRoles": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Resident",
+                    "Fellow",
+                    "Student"
+                  ]
+                },
+                "uniqueItems": true
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "oneOffDates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "period": {
+            "type": "string",
+            "enum": [
+              "AM",
+              "PM"
+            ]
+          },
+          "session": {
+            "type": "string",
+            "enum": [
+              "AM",
+              "PM"
+            ]
+          },
+          "clinicName": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "capacity": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "allowedRoles": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Resident",
+                    "Fellow",
+                    "Student"
+                  ]
+                },
+                "uniqueItems": true
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

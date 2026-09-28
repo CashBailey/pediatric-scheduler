@@ -1,0 +1,37 @@
+{
+  "version": "v1",
+  "schemas": [
+    {
+      "id": "attending.v1",
+      "filename": "attending.schema.json"
+    },
+    {
+      "id": "conflict.v1",
+      "filename": "conflict.schema.json"
+    },
+    {
+      "id": "inpatient-assignment.v1",
+      "filename": "inpatient-assignment.schema.json"
+    },
+    {
+      "id": "legend-entry.v1",
+      "filename": "legend-entry.schema.json"
+    },
+    {
+      "id": "outpatient-session.v1",
+      "filename": "outpatient-session.schema.json"
+    },
+    {
+      "id": "rotator.v1",
+      "filename": "rotator.schema.json"
+    },
+    {
+      "id": "scheduler-state.v1",
+      "filename": "scheduler-state.schema.json"
+    },
+    {
+      "id": "service-block.v1",
+      "filename": "service-block.schema.json"
+    }
+  ]
+}

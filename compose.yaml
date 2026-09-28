@@ -1,0 +1,23 @@
+name: pedi-scheduler-react
+
+services:
+  pedi-scheduler-react:
+    # Local-dev tag is intentionally UNVERSIONED. `make build` builds this tag
+    # and `make up` runs it (--no-build), so the two only need to agree with
+    # each other — pinning a version here just drifts from package.json (it sat
+    # at 0.22.0 while the app was 0.26.0, so `make up` looked for a stale image).
+    # The shipped artifact stays version-pinned: build-release.sh stamps
+    # release/CoordinatorPediSchedulerReact/compose.yaml with the real version.
+    image: pedi-scheduler-react:dev
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    platform: linux/amd64
+    ports:
+      - "127.0.0.1:6173:6173"
+    volumes:
+      - pedi_scheduler_react_data:/home/app/.local/share/pedi_scheduler
+
+volumes:
+  pedi_scheduler_react_data:
+    name: pedi_scheduler_react_data

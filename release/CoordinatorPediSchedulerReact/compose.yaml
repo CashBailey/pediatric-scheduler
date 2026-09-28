@@ -1,0 +1,14 @@
+name: coordinator-pedi-scheduler-react
+
+services:
+  pedi-scheduler-react:
+    image: pedi-scheduler-react:0.26.0
+    platform: linux/amd64
+    ports:
+      - "127.0.0.1:6173:6173"
+    volumes:
+      - pedi_scheduler_react_data:/home/app/.local/share/pedi_scheduler
+
+volumes:
+  pedi_scheduler_react_data:
+    name: pedi_scheduler_react_data

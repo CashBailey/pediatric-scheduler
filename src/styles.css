@@ -1,0 +1,2711 @@
+:root {
+  color-scheme: dark;
+  --bg: #10140f;
+  --surface: #171d16;
+  --panel: #20281e;
+  --panel-strong: #293326;
+  --text: #edf4e8;
+  --muted: #acb9a5;
+  --line: #394532;
+  --accent: #b7e37b;
+  --accent-strong: #7cc24a;
+  /* Text painted ON a solid --accent fill. Dark theme's accent is pale lime,
+     so on-accent text is near-black; it flips to white in light mode (forest
+     green accent). Paired token keeps fg/bg contrast guaranteed per theme. */
+  --on-accent: #12200d;
+  --warning: #f2bb57;
+  --danger: #e06c5f;
+  --blue: #8eb7ff;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4f3ed;
+  --surface: #ffffff;
+  --panel: #fdfcf8;
+  --panel-strong: #ebe8dc;
+  --text: #1d261b;
+  --muted: #66715f;
+  --line: #d7d2c5;
+  --accent: #416f25;
+  --accent-strong: #2f5c18;
+  --on-accent: #ffffff;
+  --warning: #94671a;
+  --danger: #a84034;
+  --blue: #2f60a8;
+  --shadow: 0 18px 42px rgba(60, 54, 42, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(135deg, rgba(183, 227, 123, 0.12), transparent 28rem),
+    radial-gradient(circle at 92% 8%, rgba(142, 183, 255, 0.14), transparent 22rem),
+    var(--bg);
+  color: var(--text);
+  font-family: Aptos, "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+}
+
+.sidebar {
+  background: rgba(16, 20, 15, 0.92);
+  border-right: 1px solid var(--line);
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+:root[data-theme="light"] .sidebar {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand > div:last-child {
+  display: grid;
+  gap: 2px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 900;
+  border-radius: 8px;
+}
+
+.brand span,
+.muted,
+small {
+  color: var(--muted);
+}
+
+.nav-list {
+  display: grid;
+  gap: 6px;
+}
+
+.nav-item,
+.icon-button,
+.primary-button,
+.secondary-button,
+.file-button {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  color: var(--muted);
+  background: transparent;
+  text-align: left;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  background: var(--panel-strong);
+  color: var(--text);
+  border-color: var(--line);
+}
+
+.local-badge {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.86rem;
+}
+
+.workspace {
+  padding: 24px;
+  min-width: 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+
+.block-switcher {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.block-switcher select {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  min-width: 240px;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  /* Was clamp(2rem, 3vw, 3.4rem) — up to 54px, which overpowered every page.
+     Contained semibold scale keeps the title a clear landmark without
+     dominating the working area. (Flagged on all 13 pages in the GUI review.) */
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  margin-bottom: 14px;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.icon-button,
+.file-button {
+  min-height: 40px;
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--line);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+}
+
+.file-button input {
+  display: none;
+}
+
+/* U3 — disabled Undo/Redo when their stack is empty. */
+.icon-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(183, 227, 123, 0.08);
+  margin-bottom: 18px;
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.dashboard-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Block Setup uses two independent vertical columns instead of the rigid
+   3-col page-grid: the grid coupled row heights, so a tall card (Coverage
+   Demand) left dead space beside a short one (Block Details). Flex columns
+   stack their own cards with no cross-column row coupling — no mid-page gap —
+   and collapse to one column on a narrow window (the 3-col grid overflowed). */
+.block-setup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.block-setup-cols {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.block-setup-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 960px) {
+  .block-setup-cols {
+    flex-direction: column;
+  }
+}
+
+/* Short content pages: flex-wrap columns that size to their OWN content, so
+   the rigid 3-col page-grid no longer leaves an empty third column or couples
+   row heights. A normal card fills ~1 share; .wide ~2 shares; .full spans the
+   row. Collapses to a single column on narrow windows. Used by Sources, Daily
+   Report, Rules, Configuration, Export (dense calendar/grid pages keep .page-grid). */
+.page-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.page-flex > .panel {
+  flex: 1 1 340px;
+  min-width: 0;
+}
+
+.page-flex > .panel.wide {
+  flex: 2 1 460px;
+}
+
+.page-flex > .panel.full {
+  flex-basis: 100%;
+}
+
+/* Form-beside-calendar pages (Inpatient, Outpatient): the entry form is a
+   fixed narrow sidebar so the calendar gets the rest of the width (a full
+   grid column made the form too wide and squeezed the day columns). First
+   child = form; second = calendar / panel-stack. Stacks on a narrow window. */
+.form-calendar {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.form-calendar > .panel,
+.form-calendar > .panel-stack {
+  min-width: 0;
+}
+
+.form-calendar > :first-child {
+  flex: 0 0 320px;
+}
+
+.form-calendar > :nth-child(2) {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 1100px) {
+  .form-calendar {
+    flex-wrap: wrap;
+  }
+  .form-calendar > :first-child,
+  .form-calendar > :nth-child(2) {
+    flex-basis: 100%;
+  }
+}
+
+.panel,
+.metric {
+  background: color-mix(in srgb, var(--panel) 94%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.panel {
+  padding: 18px;
+  /* Subtle surface lift — keeps the border but adds a faint shadow so
+     cards read as raised against the background (GUI review: flat cards).
+     Shadows aren't theme-flippable color tokens here, so a literal rgba
+     is used per the contract's explicit value. */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.panel-stack {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.metric {
+  min-height: 132px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Preserve the original elevated shadow on metric cards (the subtle
+     lift change applies only to .panel per the design contract). */
+  box-shadow: var(--shadow);
+}
+
+.metric span {
+  color: var(--muted);
+}
+
+.metric strong {
+  font-size: 1.45rem;
+  overflow-wrap: anywhere;
+}
+
+/* Highlight a metric value that needs attention (e.g. open conflicts > 0)
+   while keeping its prominent size. */
+.metric strong.metric-alert {
+  color: var(--danger);
+}
+
+.pipeline,
+.manifest-list,
+.dense-list {
+  display: grid;
+  gap: 10px;
+}
+
+.pipeline {
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+}
+
+/* Dashboard "How scheduling works" 4-step narrative (B2). Plain numbered
+   list so the workflow text is always visible above the icon-only pipeline. */
+.workflow-steps {
+  margin: 4px 0 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 8px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.workflow-steps strong {
+  color: var(--text);
+}
+
+/* F1 — pinned-fellow ★ badge on Planning Grid row headers. */
+.planning-fellow-star {
+  color: var(--warning);
+  margin-right: 4px;
+}
+
+/* U1 — click the card header to expand/collapse. No text-selection on click. */
+.roster-profile-clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.step,
+.manifest-list div,
+.list-row {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 12px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--warning);
+  white-space: nowrap;
+}
+
+.step.done {
+  color: var(--accent);
+}
+
+.list-row {
+  display: grid;
+  gap: 3px;
+}
+
+.manifest-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.form-grid.single {
+  grid-template-columns: 1fr;
+}
+
+.roster-row {
+  display: grid;
+  gap: 8px;
+}
+
+.roster-row.selected > .panel {
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-strong) 55%, transparent);
+}
+
+.roster-profile-summary,
+.roster-profile-editor {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.roster-profile-summary-head,
+.roster-profile-editor-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.roster-profile-summary-title {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.roster-profile-summary-title h3,
+.roster-profile-summary-title p {
+  margin: 0;
+}
+
+.roster-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.roster-card-actions .secondary-button {
+  min-height: 36px;
+  padding: 8px 10px;
+}
+
+.roster-card-actions .roster-card-actions {
+  display: contents;
+}
+
+.roster-row-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.roster-row-checkbox input {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+}
+
+.roster-profile-toggle svg {
+  flex: 0 0 auto;
+}
+
+.roster-profile-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 14px;
+  margin: 10px 0 0;
+}
+
+.roster-profile-facts div {
+  min-width: 0;
+}
+
+.roster-profile-facts dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.roster-profile-facts dd {
+  margin: 2px 0 0;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.roster-profile-fact-wide {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 720px) {
+  .roster-profile-facts {
+    grid-template-columns: 1fr;
+  }
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+}
+
+input,
+select {
+  width: 100%;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px 11px;
+  min-width: 0;
+}
+
+/* Native control theming — dark-skin the OS widgets so date pickers,
+   selects and text/number fields match the theme, and give a clear
+   accent focus ring. (GUI review: native checkboxes/date-pickers broke
+   the dark theme.) color-scheme makes the calendar/spinner UI dark too. */
+input[type="date"],
+input[type="text"],
+input[type="number"],
+input[type="search"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color-scheme: inherit;
+}
+
+input:focus,
+input:focus-visible,
+select:focus,
+select:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none;
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 1px var(--accent-strong);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--accent);
+}
+
+/* Boolean on/off controls render as a pill toggle switch instead of a
+   checkmark — nicer for single settings/filters. Applied to .check-row
+   checkboxes (Calendars to Generate, Rules) and any input.toggle-switch
+   (the "Only show…" / "Show next block" filters). Dense checklists and
+   grids keep the plain accent-color checkbox above. */
+.check-row input[type="checkbox"],
+input.toggle-switch {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 22px;
+  margin: 0;
+  border-radius: 999px;
+  background: var(--panel-strong);
+  border: 1px solid var(--line);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.check-row input[type="checkbox"]::after,
+input.toggle-switch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.check-row input[type="checkbox"]:checked,
+input.toggle-switch:checked {
+  background: var(--accent);
+  border-color: var(--accent-strong);
+}
+
+.check-row input[type="checkbox"]:checked::after,
+input.toggle-switch:checked::after {
+  transform: translate(18px, -50%);
+  background: var(--bg);
+}
+
+.check-row input[type="checkbox"]:focus-visible,
+input.toggle-switch:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.check-row {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.check-row input {
+  width: 18px;
+}
+
+.primary-button,
+.secondary-button,
+.danger-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+}
+
+.primary-button {
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 800;
+}
+
+/* Ghost / outlined secondary action — clear hierarchy vs the filled
+   .primary-button. Transparent until hover, when it fills with accent
+   (mirrors the existing accent-fill button convention). (GUI review:
+   primary vs secondary hierarchy — same lime fill was overused.) */
+.secondary-button {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent-strong);
+}
+
+.secondary-button:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.danger-button {
+  background: #b91c1c;
+  color: #fff;
+  border-color: #7f1d1d;
+  font-weight: 700;
+}
+.danger-button:hover {
+  background: #991b1b;
+}
+
+.action-bar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table-wrap {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+th {
+  background: var(--panel-strong);
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(120px, 1fr));
+  gap: 8px;
+  overflow: auto;
+}
+
+.calendar-cell {
+  min-height: 120px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 10px;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.calendar-cell span {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.session-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.session-line {
+  font-size: 0.82rem;
+  line-height: 1.25;
+  color: var(--text);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border-left: 3px solid transparent;
+}
+
+.session-line strong {
+  margin-right: 4px;
+}
+
+.session-line-am {
+  border-left-color: rgba(245, 158, 11, 0.7);
+}
+
+.session-line-pm {
+  border-left-color: rgba(99, 102, 241, 0.7);
+}
+
+.clinic-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.clinic-chip {
+  font-size: 0.7rem;
+  line-height: 1;
+  padding: 3px 6px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  letter-spacing: 0.02em;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.clinic-chip-am {
+  background: rgba(245, 158, 11, 0.12);
+  color: #b45309;
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.clinic-chip-pm {
+  background: rgba(99, 102, 241, 0.12);
+  color: #4338ca;
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  .clinic-chip-am {
+    background: rgba(245, 158, 11, 0.18);
+    color: #fbbf24;
+    border-color: rgba(245, 158, 11, 0.45);
+  }
+  .clinic-chip-pm {
+    background: rgba(129, 140, 248, 0.2);
+    color: #c7d2fe;
+    border-color: rgba(129, 140, 248, 0.5);
+  }
+}
+
+.report-box {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 360px;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: var(--text);
+}
+
+/* Header row that lets a panel title share its line with an action button. */
+.panel-head-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid var(--accent-strong);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.empty-state {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  color: var(--accent);
+}
+
+/* Calm inline empty-state for list/table panels that simply have no data
+   yet (vs the larger centered .empty-state). Muted, never looks "broken". */
+.empty-note {
+  margin: 0;
+  padding: 14px 4px;
+  color: var(--muted, #8b93a1);
+  font-size: 13px;
+  font-style: italic;
+}
+
+.table-empty {
+  text-align: center;
+  padding: 18px 8px;
+  color: var(--muted, #8b93a1);
+  font-style: italic;
+}
+
+@media (max-width: 1050px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+
+  .nav-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-grid,
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wide,
+  .full {
+    grid-column: auto;
+  }
+
+  .pipeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .workspace {
+    padding: 16px;
+  }
+
+  .topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .nav-list,
+  .form-grid,
+  .pipeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.clickable-row:hover {
+  background: var(--panel-strong);
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.link-button:hover {
+  color: var(--accent-strong);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 50;
+}
+
+.modal-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.modal-header h2 {
+  margin: 0 0 0.25rem;
+}
+
+.modal-body {
+  padding: 1rem 1.25rem;
+  overflow: auto;
+}
+
+.import-layout-toggle {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+.import-layout-toggle legend {
+  padding: 0 0.25rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.import-layout-toggle label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+.import-mapping-panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  background: var(--panel);
+}
+.import-mapping-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.4rem 1rem;
+}
+.import-mapping-grid label {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+.import-mapping-grid select {
+  min-width: 0;
+}
+.import-mapping-auto {
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.import-warning-banner {
+  background: rgba(245, 166, 35, 0.12);
+  border-left: 3px solid #f5a623;
+  padding: 0.5rem 0.75rem;
+  margin: 0 0 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.import-warning-banner.import-warning-error {
+  background: rgba(220, 53, 69, 0.12);
+  border-left-color: #dc3545;
+}
+.import-warning-banner.import-warning-mild {
+  background: rgba(108, 117, 125, 0.08);
+  border-left-color: #6c757d;
+}
+
+.source-preview-text {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  max-height: 65vh;
+  overflow: auto;
+  margin: 0;
+}
+
+/* ===== Enhanced calendars (Inpatient + Outpatient) ===== */
+
+.calendar-legend-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin: 4px 0 12px;
+  align-items: center;
+}
+
+.calendar-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calendar-legend-item small {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.calendar-pill {
+  display: inline-block;
+  width: 14px;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--panel-strong);
+  border: 1px solid var(--line);
+}
+
+.calendar-pill-on { background: rgba(124, 194, 74, 0.85); border-color: rgba(124, 194, 74, 0.85); }
+.calendar-pill-off { background: rgba(140, 140, 140, 0.5); border-color: rgba(140, 140, 140, 0.6); }
+.calendar-pill-am { background: rgba(245, 158, 11, 0.85); border-color: rgba(245, 158, 11, 0.85); }
+.calendar-pill-pm { background: rgba(99, 102, 241, 0.85); border-color: rgba(99, 102, 241, 0.85); }
+.calendar-pill-senior { background: rgba(224, 108, 95, 0.8); border-color: rgba(224, 108, 95, 0.8); }
+.calendar-pill-fellow { background: rgba(142, 183, 255, 0.85); border-color: rgba(142, 183, 255, 0.85); }
+.calendar-pill-student { background: rgba(183, 227, 123, 0.85); border-color: rgba(183, 227, 123, 0.85); }
+.calendar-pill-cme { background: rgba(242, 187, 87, 0.85); border-color: rgba(242, 187, 87, 0.85); }
+.calendar-pill-staytuned { background: rgba(180, 180, 180, 0.65); border-color: rgba(180, 180, 180, 0.65); }
+.calendar-pill-noclinic { background: rgba(80, 80, 80, 0.65); border-color: rgba(80, 80, 80, 0.65); }
+
+.calendar-week-header {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(120px, 1fr));
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.calendar-week-header.weekday-only {
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
+}
+
+.calendar-week-header-cell {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  padding: 4px 8px;
+}
+
+.calendar-grid-week-aligned {
+  grid-template-columns: repeat(7, minmax(140px, 1fr));
+}
+
+.calendar-grid-outpatient {
+  grid-template-columns: repeat(5, minmax(170px, 1fr));
+}
+
+.calendar-cell-blank {
+  background: transparent;
+  border: 1px dashed var(--line);
+  min-height: 120px;
+  opacity: 0.35;
+}
+
+.inpatient-cell,
+.outpatient-cell {
+  min-height: 140px;
+  gap: 6px;
+  padding: 10px;
+  align-content: start;
+  position: relative;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.inpatient-cell.expanded,
+.outpatient-cell.expanded {
+  grid-column: span 2;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+}
+
+.inpatient-cell.weekend {
+  background: color-mix(in srgb, var(--surface) 80%, var(--panel) 20%);
+}
+
+.inpatient-cell.holiday,
+.outpatient-cell.holiday {
+  border-top: 3px solid var(--warning);
+}
+
+.inpatient-cell.has-conflict,
+.outpatient-cell.has-conflict {
+  border-left: 3px solid var(--danger);
+}
+
+.outpatient-cell.no-clinic {
+  background: color-mix(in srgb, var(--surface) 80%, var(--panel-strong) 20%);
+  opacity: 0.9;
+}
+
+.day-header {
+  /* Stacked: the date gets its own full-width line (never wraps in a narrow
+     calendar cell), and the controls (conflict dot + MORE) sit on a second
+     row. Side-by-side crammed the date into ~68px and forced "Wed, Jul / 1". */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 4px;
+  margin-bottom: 2px;
+}
+
+.day-header-left,
+.day-header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.day-header-left strong {
+  white-space: nowrap;
+}
+
+.day-header-right {
+  justify-content: flex-end;
+}
+
+.day-header strong {
+  font-size: 0.85rem;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.day-tag {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background: var(--panel-strong);
+  cursor: help;
+}
+
+.day-tag.tag-holiday {
+  background: rgba(242, 187, 87, 0.18);
+  color: var(--warning);
+  border-color: rgba(242, 187, 87, 0.55);
+}
+
+.day-tag.tag-weekend {
+  background: var(--panel-strong);
+  color: var(--muted);
+}
+
+.day-tag.tag-noclinic {
+  background: rgba(140, 140, 140, 0.2);
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+.conflict-dot {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--danger);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 900;
+  cursor: help;
+  line-height: 1;
+}
+
+.day-toggle {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.day-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.day-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summary-row {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.summary-row.summary-pullouts {
+  grid-template-columns: 1fr;
+}
+
+.row-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  padding: 1px 5px;
+  border-radius: 999px;
+  background: var(--panel-strong);
+  border: 1px solid var(--line);
+}
+
+.summary-on .row-label {
+  color: var(--accent-strong);
+  background: rgba(124, 194, 74, 0.12);
+  border-color: rgba(124, 194, 74, 0.4);
+}
+
+.summary-senior .row-label {
+  color: var(--danger);
+  background: rgba(224, 108, 95, 0.12);
+  border-color: rgba(224, 108, 95, 0.4);
+}
+
+.summary-fellow .row-label {
+  color: var(--blue);
+  background: rgba(142, 183, 255, 0.12);
+  border-color: rgba(142, 183, 255, 0.4);
+}
+
+.summary-academic .row-label {
+  color: var(--warning);
+  background: rgba(242, 187, 87, 0.14);
+  border-color: rgba(242, 187, 87, 0.4);
+}
+
+.row-count {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.row-names {
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pullout-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.pullout-chip {
+  font-size: 0.68rem;
+  line-height: 1;
+  padding: 3px 6px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: help;
+  white-space: nowrap;
+}
+
+.pullout-am {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.pullout-pm {
+  background: rgba(99, 102, 241, 0.15);
+  color: #4338ca;
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+:root[data-theme="dark"] .pullout-am {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.5);
+}
+
+:root[data-theme="dark"] .pullout-pm {
+  background: rgba(129, 140, 248, 0.22);
+  color: #c7d2fe;
+  border-color: rgba(129, 140, 248, 0.55);
+}
+
+.day-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px dashed var(--line);
+}
+
+.day-meta {
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--panel-strong);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  cursor: help;
+}
+
+.meta-student {
+  color: var(--accent-strong);
+  background: rgba(124, 194, 74, 0.1);
+  border-color: rgba(124, 194, 74, 0.35);
+}
+
+.meta-fellow {
+  color: var(--blue);
+  background: rgba(142, 183, 255, 0.1);
+  border-color: rgba(142, 183, 255, 0.35);
+}
+
+.meta-cme {
+  color: var(--warning);
+  background: rgba(242, 187, 87, 0.12);
+  border-color: rgba(242, 187, 87, 0.4);
+}
+
+.meta-off {
+  color: var(--muted);
+  background: var(--panel-strong);
+}
+
+/* Outpatient clinic-period rows */
+.clinic-period {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 6px;
+  align-items: start;
+}
+
+.period-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 4px;
+  background: var(--panel-strong);
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+.clinic-period-am .period-tag {
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.clinic-period-pm .period-tag {
+  color: #4338ca;
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+:root[data-theme="dark"] .clinic-period-am .period-tag {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.18);
+  border-color: rgba(245, 158, 11, 0.5);
+}
+
+:root[data-theme="dark"] .clinic-period-pm .period-tag {
+  color: #c7d2fe;
+  background: rgba(129, 140, 248, 0.2);
+  border-color: rgba(129, 140, 248, 0.55);
+}
+
+.clinic-period.empty {
+  opacity: 0.7;
+}
+
+.clinic-period.empty .muted {
+  font-size: 0.78rem;
+  padding: 2px 0;
+}
+
+.clinic-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.clinic-row {
+  font-size: 0.78rem;
+  line-height: 1.2;
+  padding: 3px 6px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  align-items: baseline;
+  cursor: help;
+}
+
+.clinic-row .clinic-name {
+  color: var(--text);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clinic-row .clinic-meta {
+  color: var(--muted);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clinic-row .clinic-count {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.clinic-row .clinic-loc {
+  font-family: "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.66rem;
+}
+
+.clinic-row.status-stay-tuned {
+  background: repeating-linear-gradient(45deg, var(--surface), var(--surface) 4px, var(--panel) 4px, var(--panel) 8px);
+  color: var(--muted);
+}
+
+.clinic-row.status-cme {
+  border-color: rgba(242, 187, 87, 0.45);
+  background: rgba(242, 187, 87, 0.08);
+}
+
+.clinic-row.status-no-clinic,
+.clinic-row.status-students-off,
+.clinic-row.status-residents-off {
+  background: var(--panel-strong);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.day-note {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+  border-top: 1px dashed var(--line);
+  padding-top: 6px;
+}
+
+.day-note.no-clinic-note {
+  text-align: center;
+  padding: 18px 8px;
+  color: var(--warning);
+}
+
+/* Expanded detail panel inside cell */
+.day-expanded {
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+  margin-top: 4px;
+  display: grid;
+  gap: 10px;
+}
+
+.detail-block strong {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+
+.detail-block ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 3px;
+}
+
+.detail-block li {
+  font-size: 0.8rem;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.detail-block .muted {
+  font-size: 0.78rem;
+  margin: 0;
+}
+
+.day-conflicts {
+  border-top: 1px dashed var(--danger);
+  padding-top: 6px;
+}
+
+.day-conflicts strong {
+  color: var(--danger);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.day-conflicts ul {
+  margin: 4px 0 0;
+  padding: 0 0 0 0;
+  list-style: none;
+  display: grid;
+  gap: 3px;
+}
+
+.conflict-line {
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.conflict-severity {
+  display: inline-block;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-right: 4px;
+  background: var(--panel-strong);
+  border: 1px solid var(--line);
+}
+
+.conflict-critical .conflict-severity {
+  background: rgba(224, 108, 95, 0.15);
+  color: var(--danger);
+  border-color: rgba(224, 108, 95, 0.45);
+}
+
+.conflict-warning .conflict-severity {
+  background: rgba(242, 187, 87, 0.14);
+  color: var(--warning);
+  border-color: rgba(242, 187, 87, 0.45);
+}
+
+@media (max-width: 1050px) {
+  .inpatient-cell.expanded,
+  .outpatient-cell.expanded {
+    grid-column: auto;
+  }
+
+  .calendar-week-header {
+    display: none;
+  }
+
+  .calendar-grid-week-aligned {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-grid-outpatient {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-cell-blank {
+    display: none;
+  }
+}
+
+/* Planning Grid — rotator × date matrix. Two-axis sticky: the rotator
+   name column stays put while you scroll horizontally through dates, and
+   the header row stays put while you scroll vertically through rotators.
+   Color coding reuses the IP/OP palette from the calendar pills so
+   readers can scan between pages without re-learning the legend. */
+.planning-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 8px;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+}
+.planning-swatch-ip { background: rgba(124, 194, 74, 0.75); border-color: rgba(124, 194, 74, 0.85); }
+.planning-swatch-op { background: rgba(142, 183, 255, 0.75); border-color: rgba(142, 183, 255, 0.85); }
+.planning-swatch-both {
+  background: linear-gradient(135deg, rgba(124, 194, 74, 0.75) 0 50%, rgba(142, 183, 255, 0.75) 50% 100%);
+  border-color: var(--line);
+}
+.planning-swatch-unassigned { background: rgba(242, 187, 87, 0.55); border-color: rgba(242, 187, 87, 0.7); }
+.planning-swatch-markedoff { background: rgba(38, 42, 54, 0.92); border-color: rgba(20, 22, 30, 0.95); }
+.planning-swatch-off { background: rgba(140, 140, 140, 0.45); border-color: rgba(140, 140, 140, 0.6); }
+.planning-swatch-absent {
+  background:
+    repeating-linear-gradient(45deg, transparent 0 3px, var(--line) 3px 4px),
+    var(--surface);
+  border-color: var(--line);
+}
+
+.planning-grid-wrap {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 72vh;
+  background: var(--surface);
+  margin-top: 12px;
+}
+
+.planning-grid-header-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.planning-staff-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.planning-grid {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: max-content;
+  min-width: 100%;
+  font-size: 0.82rem;
+}
+
+.planning-grid th,
+.planning-grid td {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 4px 6px;
+  text-align: center;
+  white-space: nowrap;
+  background: var(--surface);
+}
+
+.planning-grid thead .planning-datehead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--panel);
+  color: var(--muted);
+  padding: 6px 8px;
+  min-width: 46px;
+  line-height: 1.15;
+}
+
+.planning-grid thead .planning-datehead.is-weekend {
+  background: var(--panel-strong);
+}
+
+.planning-grid .planning-datehead-weekday {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.planning-grid .planning-datehead-date {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.planning-grid .planning-rowhead {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--panel);
+  padding: 6px 10px;
+  min-width: 170px;
+  max-width: 220px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.85rem;
+}
+
+.planning-grid .planning-sticky-col {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  border-right: 1px solid var(--line);
+}
+
+.planning-grid thead .planning-sticky-col {
+  z-index: 4;
+}
+
+.planning-grid tfoot .planning-sticky-col {
+  z-index: 3;
+}
+
+.planning-grid .planning-cell {
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.planning-grid .planning-cell.is-weekend {
+  /* Subtle weekend tint over whatever the status background already set */
+  box-shadow: inset 0 0 0 999px rgba(0, 0, 0, 0.06);
+}
+
+/* Per-cell colors stand alone — section grouping organizes rows but
+   doesn't tint cells. The cell's status (IP / OP / unassigned / off /
+   absent / both) is the only source of color. A Mixed-schedule
+   rotator's row shows green IP days alongside blue OP days, which is
+   the real shape of the assignment per Coordinator's spec.
+*/
+.planning-grid .planning-cell-absent {
+  background:
+    repeating-linear-gradient(45deg, transparent 0 4px, var(--line) 4px 5px),
+    var(--surface);
+  color: transparent;
+}
+
+.planning-grid .planning-cell-off {
+  background: rgba(140, 140, 140, 0.18);
+  color: var(--muted);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* #7: a MARKED-OFF day (painted OFF, role:"Off", reason "marked-off") renders
+   in a distinct DARK color so it reads as "deliberately off" — separate from
+   the lighter off-service / unavailability slash above. */
+.planning-grid .planning-cell-markedoff {
+  background: rgba(38, 42, 54, 0.9);
+  color: rgba(226, 230, 240, 0.92);
+  font-style: normal;
+  font-weight: 600;
+}
+:root[data-theme="light"] .planning-grid .planning-cell-markedoff {
+  background: rgba(44, 49, 63, 0.92);
+  color: rgba(236, 239, 246, 0.95);
+}
+
+/* Cell alpha values bumped from 0.16-0.22 → 0.45 so cell colors match
+   the legend swatch saturation (0.55-0.75). The previous values made
+   the cells visually "look uncolored" next to the legend.
+
+   Salience hierarchy (most to least visually loud):
+   1. unassigned (highest — Coordinator's "coverage gap" signal she scans for)
+   2. both       (mixed schedule — extra eyes need)
+   3. inpatient / outpatient (assigned-but-fine — at-a-glance recognition)
+   4. off        (low — provider has nothing this day)
+   5. absent     (lowest — rotator isn't here at all; striped pattern is the cue)
+*/
+
+.planning-grid .planning-cell-inpatient {
+  background: rgba(124, 194, 74, 0.45);
+  color: var(--text);
+}
+
+.planning-grid .planning-cell-outpatient {
+  background: rgba(142, 183, 255, 0.45);
+  color: var(--text);
+}
+
+.planning-grid .planning-cell-both {
+  position: relative;
+  background: linear-gradient(135deg, rgba(124, 194, 74, 0.55) 0 50%, rgba(142, 183, 255, 0.55) 50% 100%);
+  color: var(--text);
+  font-size: 0.78rem;
+}
+/* 3px red stripe on the left edge of every "both" cell so colorblind
+   users (who can't distinguish IP green from OP blue) still see the
+   "this rotator is split between IP+OP today" signal. */
+.planning-grid .planning-cell-both::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: rgba(217, 83, 79, 0.85);
+  pointer-events: none;
+}
+
+.planning-grid .planning-cell-unassigned {
+  background: rgba(242, 187, 87, 0.45);
+  color: var(--warning);
+  font-weight: 600;
+}
+
+.planning-grid tfoot th,
+.planning-grid tfoot td {
+  position: sticky;
+  bottom: 0;
+  background: var(--panel);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.planning-grid tfoot .planning-total-row.planning-total-ip td {
+  background: rgba(124, 194, 74, 0.1);
+}
+
+.planning-grid tfoot .planning-total-row.planning-total-op td {
+  background: rgba(142, 183, 255, 0.1);
+}
+
+.planning-grid tfoot .planning-total-row.planning-total-unassigned td {
+  background: rgba(242, 187, 87, 0.08);
+  color: var(--muted);
+}
+
+/* Section header rows inside the planning grid — the colored bars that
+   separate Unassigned / Inpatient / Outpatient / Not in block. */
+.planning-grid .planning-section-header th {
+  text-align: left;
+  padding: 0;
+  background: transparent;
+}
+.planning-grid .planning-section-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.4rem 0.75rem;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+.planning-grid .planning-section-toggle:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+.planning-grid .planning-section-chevron {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+.planning-grid .planning-section-count {
+  margin-left: 0.25rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+/* Section header bars — color hierarchy follows attention priority per
+   Coordinator's "your eye is immediately drawn toward..." spec: amber Needs
+   (top, highest), purple Mixed (medium-high — split schedules deserve
+   care), green Fully IP / blue Fully OP (locked-in, less attention),
+   muted Not-in-block (bottom, lowest). */
+.planning-grid .planning-section-header-needs th {
+  background: rgba(242, 187, 87, 0.40);
+}
+.planning-grid .planning-section-header-staff th {
+  background: color-mix(in srgb, var(--accent) 18%, var(--panel));
+  box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.planning-grid .planning-section-header-mixed th {
+  background: rgba(168, 85, 247, 0.32);
+}
+.planning-grid .planning-section-header-fullyIp th {
+  background: rgba(124, 194, 74, 0.35);
+}
+.planning-grid .planning-section-header-fullyOp th {
+  background: rgba(142, 183, 255, 0.35);
+}
+.planning-grid .planning-section-header-unavailable th {
+  background: rgba(140, 140, 140, 0.25);
+  color: var(--muted);
+}
+.planning-grid .planning-section-empty td {
+  padding: 0.5rem 0.75rem;
+  font-style: italic;
+}
+
+.planning-grid .planning-row-staff .planning-rowhead {
+  background: color-mix(in srgb, var(--accent) 10%, var(--panel));
+}
+
+.planning-grid .planning-rowhead-attending {
+  color: var(--accent);
+  cursor: default;
+}
+
+.planning-grid .planning-cell-readonly {
+  cursor: default;
+}
+
+.planning-grid .planning-cell-staff-readonly {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 26%, transparent);
+}
+
+.planning-grid .planning-row-attending .planning-cell-absent {
+  opacity: 0.72;
+}
+
+/* View tabs (Master / Inpatient / Outpatient). Sits above the
+   range-assign form. The active tab gets a thicker outline so it's
+   obvious where you are. */
+.planning-view-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.planning-view-tab {
+  flex: 1;
+  min-width: 180px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  font: inherit;
+  transition: border-color 0.1s ease, background 0.1s ease;
+}
+.planning-view-tab:hover {
+  border-color: var(--text);
+}
+.planning-view-tab.is-active {
+  border-width: 2px;
+  padding: calc(0.6rem - 1px) calc(0.9rem - 1px);
+}
+.planning-view-tab-master.is-active {
+  border-color: rgba(124, 194, 74, 0.85);
+  background: rgba(124, 194, 74, 0.12);
+}
+.planning-view-tab-inpatient.is-active {
+  border-color: rgba(124, 194, 74, 0.85);
+  background: rgba(124, 194, 74, 0.12);
+}
+.planning-view-tab-outpatient.is-active {
+  border-color: rgba(142, 183, 255, 0.85);
+  background: rgba(142, 183, 255, 0.12);
+}
+.planning-view-tab-label {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+.planning-view-tab-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.planning-grid tfoot .planning-total-cell.has-gap {
+  background: rgba(242, 187, 87, 0.45);
+  color: var(--text);
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px rgba(242, 187, 87, 0.9);
+}
+
+:root[data-theme="light"] .planning-grid .planning-cell-inpatient {
+  background: rgba(65, 111, 37, 0.18);
+}
+
+:root[data-theme="light"] .planning-grid .planning-cell-outpatient {
+  background: rgba(47, 96, 168, 0.16);
+}
+
+:root[data-theme="light"] .planning-grid .planning-cell-unassigned {
+  background: rgba(148, 103, 26, 0.16);
+  color: var(--warning);
+}
+
+:root[data-theme="light"] .planning-grid tfoot .planning-total-cell.has-gap {
+  background: rgba(148, 103, 26, 0.35);
+}
+
+/* Range-assign form — sits above the planning grid table. */
+.range-assign-form {
+  margin: 14px 0 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.range-assign-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.range-assign-header strong {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.range-assign-header .muted {
+  font-size: 0.85rem;
+  flex: 1 1 auto;
+}
+
+.range-assign-fields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+}
+
+.range-assign-fields > label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.85rem;
+  min-width: 0;
+}
+
+.range-assign-fields > label > select,
+.range-assign-fields > label > input {
+  min-width: 140px;
+}
+
+.range-assign-phase {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 10px 6px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  margin: 0;
+}
+
+.range-assign-phase legend {
+  font-size: 0.75rem;
+  color: var(--muted);
+  padding: 0 6px;
+  margin-left: -2px;
+}
+
+.range-assign-radio {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 6px !important;
+  font-size: 0.9rem;
+  color: var(--text);
+  cursor: pointer;
+  margin: 0;
+}
+
+.range-assign-radio input[type="radio"] {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.range-assign-apply {
+  height: 40px;
+  align-self: end;
+}
+
+.range-assign-empty,
+.range-assign-clamp-note {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.range-assign-clamp-note {
+  color: var(--accent);
+}
+
+:root[data-theme="light"] .range-assign-form {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Conflicts page — clickable rows with a Jump button per conflict.
+   Replaces the previous read-only Table layout. */
+.conflicts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.conflict-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.conflict-row.severity-critical {
+  border-left: 3px solid var(--danger);
+}
+.conflict-row.severity-warning {
+  border-left: 3px solid var(--warning);
+}
+.conflict-row-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.conflict-severity {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.conflict-severity.severity-critical {
+  background: color-mix(in srgb, var(--danger) 18%, transparent);
+  color: var(--danger);
+}
+.conflict-severity.severity-warning {
+  background: color-mix(in srgb, var(--warning) 18%, transparent);
+  color: var(--warning);
+}
+.conflict-date {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.conflict-title {
+  flex: 1;
+  min-width: 0;
+}
+.conflict-detail {
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding-left: 0.25rem;
+}
+.conflict-jump-button {
+  margin-left: auto;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+/* Combined Planning Page tabs (tab-merge, 2026-05-22).
+   Top-level tabs at the top of the page; existing three pages
+   (Planning Grid / Inpatient / Outpatient) become panels below. */
+.combined-planning {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.combined-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 0;
+}
+.combined-tab {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  position: relative;
+  top: 1px;
+}
+.combined-tab:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+.combined-tab.is-active {
+  background: var(--panel);
+  border-color: var(--line);
+  border-bottom: 2px solid var(--panel);
+  font-weight: 700;
+}
+.combined-tab-label {
+  font-size: 0.95rem;
+}
+.combined-tab-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.combined-panel[hidden] {
+  display: none;
+}
+
+/* Drag-drop + paint-tool (last two of the phone-call asks).
+   Style layers per the meta-summary's contract:
+     status background (existing planning-cell-*)
+     weekend overlay (existing)
+     filter dimming (block-filter — opacity)
+     drag preview + paint preview (outline + box-shadow, NOT background)
+*/
+
+/* Draggable row header — grab cursor, faint preview while being dragged. */
+.planning-rowhead-draggable {
+  cursor: grab;
+  user-select: none;
+}
+.planning-rowhead-draggable:active {
+  cursor: grabbing;
+}
+.planning-rowhead-draggable.is-dragging {
+  opacity: 0.55;
+}
+
+/* Drop target visual feedback. Outline-based (not background) so it
+   layers cleanly on top of the cell's status color. */
+.planning-cell.drop-target-active {
+  outline: 2px solid #4a90e2;
+  outline-offset: -2px;
+  box-shadow: inset 0 0 0 1px rgba(74, 144, 226, 0.4);
+}
+.planning-cell.drop-invalid {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Paint-tool toolbar at the top of the Master tab. Mirrors the planning
+   filter checkbox row above it. */
+.paint-toolbar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.paint-toolbar-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.paint-toolbar-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.paint-toolbar-option.is-active {
+  background: rgba(74, 144, 226, 0.18);
+  border-color: #4a90e2;
+  font-weight: 700;
+}
+.paint-toolbar-option input[type="radio"] {
+  margin: 0;
+}
+
+/* Paint mode cursor cue + preview overlay during an active sweep. */
+.planning-cell.paint-mode-ip,
+.planning-cell.paint-mode-op {
+  cursor: crosshair;
+}
+/* Reset tool wipes an assignment — cell-erase cursor distinguishes it
+   from the paint-on crosshair. */
+.planning-cell.paint-mode-clear {
+  cursor: cell;
+}
+.planning-cell.paint-preview {
+  outline: 2px solid #f0ad4e;
+  outline-offset: -2px;
+  box-shadow: inset 0 0 0 1px rgba(240, 173, 78, 0.5);
+}
+/* While the Reset sweep is dragging, tint the preview red so it reads as
+   "removing", not "painting amber". */
+.planning-cell.paint-mode-clear.paint-preview {
+  outline-color: #d9534f;
+  box-shadow: inset 0 0 0 1px rgba(217, 83, 79, 0.5);
+}
+/* #7: OFF paint cursor cue (radio id "offday" → class paint-mode-offday). */
+.planning-cell.paint-mode-offday {
+  cursor: crosshair;
+}
+.planning-cell.paint-mode-offday.paint-preview {
+  outline-color: #2b3040;
+  box-shadow: inset 0 0 0 1px rgba(43, 48, 64, 0.6);
+}
+
+/* #6: OP paint is refused on weekend / no-clinic-holiday cells. Show a
+   "no" cursor + faint dim so it reads as not-paintable while OP is the tool. */
+.planning-cell.paint-blocked {
+  cursor: not-allowed;
+  background-image: repeating-linear-gradient(
+    45deg, transparent 0 5px, rgba(120, 120, 120, 0.16) 5px 7px);
+}
+
+/* #6: weekend / holiday column headers — visually distinguish the always-on
+   inpatient-paintable, OP-blocked days. */
+.planning-grid .planning-datehead-weekend {
+  background: rgba(120, 130, 150, 0.12);
+}
+.planning-grid .planning-datehead-holiday {
+  background: rgba(217, 83, 79, 0.14);
+}
+.planning-grid .planning-datehead-holiday .planning-datehead-weekday::after {
+  content: " ★";
+  color: rgba(217, 83, 79, 0.9);
+}
+/* Peek context columns outside the active block. Tinted so it's clear they're
+   view-only, with dividers where the context meets the editable block. */
+.planning-grid .planning-datehead-peek {
+  background: rgba(74, 144, 226, 0.10);
+}
+.planning-grid .planning-datehead-peek-start {
+  border-left: 2px solid rgba(74, 144, 226, 0.55);
+}
+.planning-grid .planning-datehead-peek-end {
+  border-right: 2px solid rgba(74, 144, 226, 0.55);
+}
+/* Peek body cells are view-only: same blue tint as the header, default cursor
+   (no paint crosshair / not-allowed), so it reads as "look, don't touch". */
+.planning-grid .planning-cell-peek-readonly {
+  background: rgba(74, 144, 226, 0.06);
+  cursor: default;
+}
+
+/* #2: persistent profile-override badge — a small corner flag on a cell whose
+   manual paint/drop knowingly contradicts the rotation profile (warn-and-allow). */
+.planning-cell.has-override-badge {
+  position: relative;
+}
+.planning-cell-override-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 12px;
+  height: 12px;
+  padding: 0 2px;
+  font-size: 9px;
+  line-height: 12px;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+  background: #d98b1f;
+  border-bottom-left-radius: 4px;
+  pointer-events: none;
+}
+
+/* #3 (Coordinator): continuity-clinic marker — a small bottom-left corner chip on a
+   person's cell whenever they hold continuity clinic that weekday, shown
+   REGARDLESS of IP/OP/Off status so the team can see they're unavailable that
+   half-day. Bottom-left + indigo, distinct from the top-right orange override
+   flag; both can coexist on one cell. */
+.planning-cell.has-continuity-badge {
+  position: relative;
+}
+/* Dark is this app's DEFAULT theme (:root); light is the [data-theme="light"]
+   override — the app does NOT use prefers-color-scheme. So the base rule below
+   is the dark-mode appearance (light indigo text on a translucent indigo fill,
+   readable on the dark cell), and the light override follows. */
+.planning-cell-continuity-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 3px;
+  font-size: 8px;
+  line-height: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #e0e7ff;
+  background: rgba(129, 140, 248, 0.45);
+  border-top-right-radius: 4px;
+  pointer-events: none;
+}
+:root[data-theme="light"] .planning-cell-continuity-badge {
+  color: #3730a3;
+  background: rgba(99, 102, 241, 0.2);
+}
+
+/* #5: section-header drop targets (Inpatient / Outpatient / Mixed). Highlight
+   droppable headers while a rotator is being dragged, and emphasize the one
+   under the pointer. */
+.planning-section-header.section-droppable th {
+  outline: 1px dashed rgba(74, 144, 226, 0.6);
+  outline-offset: -3px;
+}
+.planning-section-header.section-drop-active th {
+  outline: 2px solid #4a90e2;
+  outline-offset: -3px;
+  background: rgba(74, 144, 226, 0.12);
+}
+.planning-section-drophint {
+  margin-left: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #4a90e2;
+  opacity: 0.9;
+}
+
+/* ============================================================
+   Design-system classes (aesthetics pass)
+   Shared vocabulary used across pages. Every rule is token-driven
+   via color-mix so it adapts to BOTH the dark theme and
+   :root[data-theme="light"]. (GUI review 2026-05: semantic color
+   system, calm "not-done-yet" vs "actually-wrong", button hierarchy,
+   read-only info panels.)
+   ============================================================ */
+
+/* ---- Status chips ----------------------------------------------------
+   Small rounded pills for *status* only (don't pill every number).
+   green = OK/active, amber = pending/warning, red = critical only,
+   muted = neutral. Tinted background + matching border + token text. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.chip-crit {
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 15%, transparent);
+  border-color: color-mix(in srgb, var(--danger) 45%, transparent);
+}
+
+.chip-warn {
+  color: var(--warning);
+  background: color-mix(in srgb, var(--warning) 15%, transparent);
+  border-color: color-mix(in srgb, var(--warning) 45%, transparent);
+}
+
+.chip-ok {
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.chip-muted {
+  color: var(--muted);
+  background: color-mix(in srgb, var(--muted) 12%, transparent);
+  border-color: color-mix(in srgb, var(--muted) 35%, transparent);
+}
+
+/* ---- Button row ------------------------------------------------------
+   Lay out a group of related buttons (e.g. the 3 PDF exports). */
+.button-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---- Calendar / slot status -----------------------------------------
+   Used by Inpatient / Outpatient cells and legend swatches. The key
+   distinction from the old "wall of red": unassigned is a CALM NEUTRAL,
+   and .slot-conflict is the ONLY saturated red. */
+/* Calendar-cell status tints. Scoped to .calendar-cell so they set ONLY a
+   background wash (+ a left-border accent on a real conflict) and inherit the
+   cell's own grid layout, padding, and border. NOT inline pills. The only red
+   is .slot-conflict — a genuine clash, never the "not scheduled yet" state. */
+.calendar-cell.slot-unassigned {
+  /* "Not scheduled yet" — barely-there neutral, never alarming. */
+  background: color-mix(in srgb, var(--muted) 7%, var(--surface));
+}
+
+.calendar-cell.slot-ip {
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+.calendar-cell.slot-op {
+  background: color-mix(in srgb, var(--blue) 9%, transparent);
+}
+
+.calendar-cell.slot-conflict {
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+  border-left: 3px solid color-mix(in srgb, var(--danger) 55%, transparent);
+}
+
+.calendar-cell.slot-off {
+  background: color-mix(in srgb, var(--muted) 6%, transparent);
+  opacity: 0.85;
+}
+
+/* ---- Conflicts list structure --------------------------------------
+   Count-summary header + date-group wrapper. (Per-row .conflict-row
+   severity left-border is defined above with the conflicts-page rules.)
+   Replaces the previous wall of loud full-width red badges. */
+.conflict-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  font-variant-numeric: tabular-nums;
+}
+
+.conflict-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 14px;
+}
+
+.conflict-group + .conflict-group {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+/* Date-group label — sticky-ish so it stays visible while scrolling a
+   long group. Quiet uppercase, monospace date feel. */
+.conflict-group > .conflict-group-label {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 4px 2px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+}
+
+/* ---- Info / explainer panel -----------------------------------------
+   Read-only context panel (e.g. Rules "Rule Impact Preview"): left
+   accent border marks it as informational, not an action surface. */
+.panel-info {
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--panel));
+}

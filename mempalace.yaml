@@ -1,0 +1,105 @@
+wing: scheduler
+rooms:
+  - name: contracts-state
+    description: Scheduler state contracts, migrations, frozen schemas, and Swift state projections.
+    keywords:
+      - SchedulerState
+      - scheduler-state
+      - contract
+      - schema
+      - freeze
+      - migration
+      - validation
+      - Codable
+  - name: command-surface
+    description: Shared scheduler commands, command envelopes, schedulerctl, and AppStore mutation paths.
+    keywords:
+      - command
+      - executeSchedulerCommand
+      - execute_scheduler_command
+      - AppStore.run
+      - schedulerctl
+      - envelope
+      - handler
+      - mutation
+  - name: native-macos
+    description: SwiftUI app, AppStore, APIClient, BackendController, and native desktop screens.
+    keywords:
+      - SwiftUI
+      - AppStore
+      - APIClient
+      - BackendController
+      - PlanningGridView
+      - ReportsView
+      - SettingsView
+      - native
+      - macOS
+  - name: legacy-browser-frontend
+    description: Retained React/Vite browser UI, browser storage, legacy components, and browser audit surfaces.
+    keywords:
+      - React
+      - Vite
+      - App.jsx
+      - src/components
+      - browser
+      - browser-audit
+      - localStorage
+      - hydration
+  - name: python-backend
+    description: FastAPI routes, loopback binding, persistence, Python contracts, and backend command handlers.
+    keywords:
+      - FastAPI
+      - backend_py
+      - create_app
+      - persistence
+      - loopback
+      - route
+      - validate
+      - Python
+  - name: shared-engine
+    description: Shared scheduler domain logic for planning, draft generation, rules, conflicts, and exports.
+    keywords:
+      - shared/scheduler
+      - scheduler.js
+      - planning
+      - draft
+      - rules
+      - conflicts
+      - export
+      - coverage
+  - name: imports-sources
+    description: Coordinator DOCX import, roster import, Excel parsing, source records, and half-day facts.
+    keywords:
+      - Coordinator
+      - DOCX
+      - roster
+      - Excel
+      - source
+      - source records
+      - ingest
+      - halfDayFacts
+      - reconciliation
+  - name: verification-release
+    description: Verification map, tests, native UI audit, packaging, handoff, and release artifacts.
+    keywords:
+      - verification
+      - tests
+      - e2e
+      - native-ui-audit
+      - handoff
+      - package
+      - release
+      - graphify
+  - name: docs-product
+    description: Product requirements, HLD, audit notes, feedback, and historical decision records.
+    keywords:
+      - HLD
+      - requirements
+      - AUDIT
+      - feedback
+      - design
+      - product
+  - name: general
+    description: Files that do not fit the focused scheduler architecture rooms.
+    keywords:
+      - general

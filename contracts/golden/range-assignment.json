@@ -1,0 +1,1472 @@
+{
+  "generatedFrom": "shared/scheduler/scheduler.js::applyRangeAssignment",
+  "cases": [
+    {
+      "name": "inpatient strips outpatient and writes range ip",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "range",
+          "serviceBlocks": [
+            {
+              "id": "range",
+              "name": "Range",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-10",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [
+                {
+                  "date": "2026-05-07",
+                  "noClinic": true,
+                  "label": "Closed clinic"
+                }
+              ]
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "Drew Quinn",
+              "displayName": "Drew Quinn",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-10"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "Wednesday PM",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [],
+          "outpatientSessions": [
+            {
+              "id": "manual-op",
+              "date": "2026-05-04",
+              "period": "AM",
+              "clinic": "QRS",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            }
+          ],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "range",
+          "name": "Range",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-10",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [
+            {
+              "date": "2026-05-07",
+              "noClinic": true,
+              "label": "Closed clinic"
+            }
+          ]
+        },
+        {
+          "rotatorId": "r1",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-05",
+          "phase": "inpatient"
+        }
+      ],
+      "output": {
+        "version": 2,
+        "activeBlockId": "range",
+        "serviceBlocks": [
+          {
+            "id": "range",
+            "name": "Range",
+            "startDate": "2026-05-04",
+            "endDate": "2026-05-10",
+            "status": "Draft",
+            "generate": {},
+            "holidays": [
+              {
+                "date": "2026-05-07",
+                "noClinic": true,
+                "label": "Closed clinic"
+              }
+            ]
+          }
+        ],
+        "sources": [],
+        "rotators": [
+          {
+            "id": "r1",
+            "fullName": "Drew Quinn",
+            "displayName": "Drew Quinn",
+            "program": "Other",
+            "level": "PGY-2",
+            "role": "Resident",
+            "segments": [
+              {
+                "start": "2026-05-04",
+                "end": "2026-05-10"
+              }
+            ],
+            "schoolType": "other",
+            "continuityClinic": "Wednesday PM",
+            "dayOff": [],
+            "unavailableRanges": []
+          }
+        ],
+        "attendings": [
+          {
+            "name": "Alder",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Birch",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Gum",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Dogwood",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Cedar",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Elm",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Hazel",
+            "recurringClinics": [],
+            "oneOffDates": []
+          }
+        ],
+        "expectedSourcePrograms": [
+          "Methodist",
+          "UT Adult Neuro",
+          "UT Pediatrics",
+          "UT Pediatric Neurology Fellow",
+          "UT Med Student",
+          "UT Psychiatry",
+          "Other"
+        ],
+        "inpatientAssignments": [
+          {
+            "id": "in-range-2026-05-04-r1-resident",
+            "date": "2026-05-04",
+            "rotatorId": "r1",
+            "role": "Resident",
+            "source": "Range-Assigned"
+          },
+          {
+            "id": "in-range-2026-05-05-r1-resident",
+            "date": "2026-05-05",
+            "rotatorId": "r1",
+            "role": "Resident",
+            "source": "Range-Assigned"
+          }
+        ],
+        "outpatientSessions": [],
+        "halfDayFacts": [],
+        "clinicAssignments": [],
+        "posterSettings": {
+          "programName": "Pediatric Neurology Residency",
+          "chief": "",
+          "notes": [
+            "Please arrive 15 minutes before clinic starts.",
+            "Check Epic for patient lists and clinic location details.",
+            "Notify the chief of any schedule conflicts as soon as possible.",
+            "This schedule is subject to change."
+          ],
+          "locations": [
+            {
+              "name": "Main Campus",
+              "address": ""
+            }
+          ],
+          "tagline": "Thank you for all you do for our patients!"
+        },
+        "rules": {
+          "maxConsecutiveInpatientDays": 6,
+          "honorNoClinicHolidays": true
+        },
+        "notes": []
+      }
+    },
+    {
+      "name": "outpatient skips weekend no clinic holiday and continuity period",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "range",
+          "serviceBlocks": [
+            {
+              "id": "range",
+              "name": "Range",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-10",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [
+                {
+                  "date": "2026-05-07",
+                  "noClinic": true,
+                  "label": "Closed clinic"
+                }
+              ]
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "Drew Quinn",
+              "displayName": "Drew Quinn",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-10"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "Wednesday PM",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "manual-ip",
+              "date": "2026-05-06",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            }
+          ],
+          "outpatientSessions": [
+            {
+              "id": "manual-op",
+              "date": "2026-05-05",
+              "period": "AM",
+              "clinic": "Continuity",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            }
+          ],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "range",
+          "name": "Range",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-10",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [
+            {
+              "date": "2026-05-07",
+              "noClinic": true,
+              "label": "Closed clinic"
+            }
+          ]
+        },
+        {
+          "rotatorId": "r1",
+          "startDate": "2026-05-05",
+          "endDate": "2026-05-10",
+          "phase": "outpatient"
+        }
+      ],
+      "output": {
+        "version": 2,
+        "activeBlockId": "range",
+        "serviceBlocks": [
+          {
+            "id": "range",
+            "name": "Range",
+            "startDate": "2026-05-04",
+            "endDate": "2026-05-10",
+            "status": "Draft",
+            "generate": {},
+            "holidays": [
+              {
+                "date": "2026-05-07",
+                "noClinic": true,
+                "label": "Closed clinic"
+              }
+            ]
+          }
+        ],
+        "sources": [],
+        "rotators": [
+          {
+            "id": "r1",
+            "fullName": "Drew Quinn",
+            "displayName": "Drew Quinn",
+            "program": "Other",
+            "level": "PGY-2",
+            "role": "Resident",
+            "segments": [
+              {
+                "start": "2026-05-04",
+                "end": "2026-05-10"
+              }
+            ],
+            "schoolType": "other",
+            "continuityClinic": "Wednesday PM",
+            "dayOff": [],
+            "unavailableRanges": []
+          }
+        ],
+        "attendings": [
+          {
+            "name": "Alder",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Birch",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Gum",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Dogwood",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Cedar",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Elm",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Hazel",
+            "recurringClinics": [],
+            "oneOffDates": []
+          }
+        ],
+        "expectedSourcePrograms": [
+          "Methodist",
+          "UT Adult Neuro",
+          "UT Pediatrics",
+          "UT Pediatric Neurology Fellow",
+          "UT Med Student",
+          "UT Psychiatry",
+          "Other"
+        ],
+        "inpatientAssignments": [],
+        "outpatientSessions": [
+          {
+            "id": "manual-op",
+            "date": "2026-05-05",
+            "period": "AM",
+            "clinic": "Continuity",
+            "provider": "",
+            "rotatorId": "r1",
+            "status": "Scheduled",
+            "source": "Manual"
+          },
+          {
+            "id": "out-range-2026-05-05-pm-r1",
+            "date": "2026-05-05",
+            "period": "PM",
+            "clinic": "Outpatient (clinic TBD)",
+            "provider": "",
+            "rotatorId": "r1",
+            "status": "Scheduled",
+            "source": "Range-Assigned"
+          },
+          {
+            "id": "out-range-2026-05-06-am-r1",
+            "date": "2026-05-06",
+            "period": "AM",
+            "clinic": "Outpatient (clinic TBD)",
+            "provider": "",
+            "rotatorId": "r1",
+            "status": "Scheduled",
+            "source": "Range-Assigned"
+          },
+          {
+            "id": "out-range-2026-05-08-am-r1",
+            "date": "2026-05-08",
+            "period": "AM",
+            "clinic": "Outpatient (clinic TBD)",
+            "provider": "",
+            "rotatorId": "r1",
+            "status": "Scheduled",
+            "source": "Range-Assigned"
+          },
+          {
+            "id": "out-range-2026-05-08-pm-r1",
+            "date": "2026-05-08",
+            "period": "PM",
+            "clinic": "Outpatient (clinic TBD)",
+            "provider": "",
+            "rotatorId": "r1",
+            "status": "Scheduled",
+            "source": "Range-Assigned"
+          }
+        ],
+        "halfDayFacts": [],
+        "clinicAssignments": [],
+        "posterSettings": {
+          "programName": "Pediatric Neurology Residency",
+          "chief": "",
+          "notes": [
+            "Please arrive 15 minutes before clinic starts.",
+            "Check Epic for patient lists and clinic location details.",
+            "Notify the chief of any schedule conflicts as soon as possible.",
+            "This schedule is subject to change."
+          ],
+          "locations": [
+            {
+              "name": "Main Campus",
+              "address": ""
+            }
+          ],
+          "tagline": "Thank you for all you do for our patients!"
+        },
+        "rules": {
+          "maxConsecutiveInpatientDays": 6,
+          "honorNoClinicHolidays": true
+        },
+        "notes": []
+      }
+    },
+    {
+      "name": "off strips services and writes off records",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "range",
+          "serviceBlocks": [
+            {
+              "id": "range",
+              "name": "Range",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-10",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [
+                {
+                  "date": "2026-05-07",
+                  "noClinic": true,
+                  "label": "Closed clinic"
+                }
+              ]
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "Drew Quinn",
+              "displayName": "Drew Quinn",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-10"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "Wednesday PM",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "manual-ip",
+              "date": "2026-05-04",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            }
+          ],
+          "outpatientSessions": [
+            {
+              "id": "manual-op",
+              "date": "2026-05-05",
+              "period": "AM",
+              "clinic": "QRS",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            }
+          ],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "range",
+          "name": "Range",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-10",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [
+            {
+              "date": "2026-05-07",
+              "noClinic": true,
+              "label": "Closed clinic"
+            }
+          ]
+        },
+        {
+          "rotatorId": "r1",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-05",
+          "phase": "off"
+        }
+      ],
+      "output": {
+        "version": 2,
+        "activeBlockId": "range",
+        "serviceBlocks": [
+          {
+            "id": "range",
+            "name": "Range",
+            "startDate": "2026-05-04",
+            "endDate": "2026-05-10",
+            "status": "Draft",
+            "generate": {},
+            "holidays": [
+              {
+                "date": "2026-05-07",
+                "noClinic": true,
+                "label": "Closed clinic"
+              }
+            ]
+          }
+        ],
+        "sources": [],
+        "rotators": [
+          {
+            "id": "r1",
+            "fullName": "Drew Quinn",
+            "displayName": "Drew Quinn",
+            "program": "Other",
+            "level": "PGY-2",
+            "role": "Resident",
+            "segments": [
+              {
+                "start": "2026-05-04",
+                "end": "2026-05-10"
+              }
+            ],
+            "schoolType": "other",
+            "continuityClinic": "Wednesday PM",
+            "dayOff": [],
+            "unavailableRanges": []
+          }
+        ],
+        "attendings": [
+          {
+            "name": "Alder",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Birch",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Gum",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Dogwood",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Cedar",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Elm",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Hazel",
+            "recurringClinics": [],
+            "oneOffDates": []
+          }
+        ],
+        "expectedSourcePrograms": [
+          "Methodist",
+          "UT Adult Neuro",
+          "UT Pediatrics",
+          "UT Pediatric Neurology Fellow",
+          "UT Med Student",
+          "UT Psychiatry",
+          "Other"
+        ],
+        "inpatientAssignments": [
+          {
+            "id": "off-2026-05-04-r1",
+            "date": "2026-05-04",
+            "rotatorId": "r1",
+            "role": "Off",
+            "source": "Range-Assigned"
+          },
+          {
+            "id": "off-2026-05-05-r1",
+            "date": "2026-05-05",
+            "rotatorId": "r1",
+            "role": "Off",
+            "source": "Range-Assigned"
+          }
+        ],
+        "outpatientSessions": [],
+        "halfDayFacts": [],
+        "clinicAssignments": [],
+        "posterSettings": {
+          "programName": "Pediatric Neurology Residency",
+          "chief": "",
+          "notes": [
+            "Please arrive 15 minutes before clinic starts.",
+            "Check Epic for patient lists and clinic location details.",
+            "Notify the chief of any schedule conflicts as soon as possible.",
+            "This schedule is subject to change."
+          ],
+          "locations": [
+            {
+              "name": "Main Campus",
+              "address": ""
+            }
+          ],
+          "tagline": "Thank you for all you do for our patients!"
+        },
+        "rules": {
+          "maxConsecutiveInpatientDays": 6,
+          "honorNoClinicHolidays": true
+        },
+        "notes": []
+      }
+    },
+    {
+      "name": "clear removes services without additions",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "range",
+          "serviceBlocks": [
+            {
+              "id": "range",
+              "name": "Range",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-10",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [
+                {
+                  "date": "2026-05-07",
+                  "noClinic": true,
+                  "label": "Closed clinic"
+                }
+              ]
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "Drew Quinn",
+              "displayName": "Drew Quinn",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-10"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "Wednesday PM",
+              "dayOff": [],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [
+            {
+              "id": "manual-ip",
+              "date": "2026-05-04",
+              "rotatorId": "r1",
+              "role": "Resident",
+              "source": "Manual"
+            }
+          ],
+          "outpatientSessions": [
+            {
+              "id": "manual-op",
+              "date": "2026-05-05",
+              "period": "PM",
+              "clinic": "QRS",
+              "provider": "",
+              "rotatorId": "r1",
+              "status": "Scheduled",
+              "source": "Manual"
+            }
+          ],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "range",
+          "name": "Range",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-10",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [
+            {
+              "date": "2026-05-07",
+              "noClinic": true,
+              "label": "Closed clinic"
+            }
+          ]
+        },
+        {
+          "rotatorId": "r1",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-05",
+          "phase": "clear"
+        }
+      ],
+      "output": {
+        "version": 2,
+        "activeBlockId": "range",
+        "serviceBlocks": [
+          {
+            "id": "range",
+            "name": "Range",
+            "startDate": "2026-05-04",
+            "endDate": "2026-05-10",
+            "status": "Draft",
+            "generate": {},
+            "holidays": [
+              {
+                "date": "2026-05-07",
+                "noClinic": true,
+                "label": "Closed clinic"
+              }
+            ]
+          }
+        ],
+        "sources": [],
+        "rotators": [
+          {
+            "id": "r1",
+            "fullName": "Drew Quinn",
+            "displayName": "Drew Quinn",
+            "program": "Other",
+            "level": "PGY-2",
+            "role": "Resident",
+            "segments": [
+              {
+                "start": "2026-05-04",
+                "end": "2026-05-10"
+              }
+            ],
+            "schoolType": "other",
+            "continuityClinic": "Wednesday PM",
+            "dayOff": [],
+            "unavailableRanges": []
+          }
+        ],
+        "attendings": [
+          {
+            "name": "Alder",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Birch",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Gum",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Dogwood",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Cedar",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Elm",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Hazel",
+            "recurringClinics": [],
+            "oneOffDates": []
+          }
+        ],
+        "expectedSourcePrograms": [
+          "Methodist",
+          "UT Adult Neuro",
+          "UT Pediatrics",
+          "UT Pediatric Neurology Fellow",
+          "UT Med Student",
+          "UT Psychiatry",
+          "Other"
+        ],
+        "inpatientAssignments": [],
+        "outpatientSessions": [],
+        "halfDayFacts": [],
+        "clinicAssignments": [],
+        "posterSettings": {
+          "programName": "Pediatric Neurology Residency",
+          "chief": "",
+          "notes": [
+            "Please arrive 15 minutes before clinic starts.",
+            "Check Epic for patient lists and clinic location details.",
+            "Notify the chief of any schedule conflicts as soon as possible.",
+            "This schedule is subject to change."
+          ],
+          "locations": [
+            {
+              "name": "Main Campus",
+              "address": ""
+            }
+          ],
+          "tagline": "Thank you for all you do for our patients!"
+        },
+        "rules": {
+          "maxConsecutiveInpatientDays": 6,
+          "honorNoClinicHolidays": true
+        },
+        "notes": []
+      }
+    },
+    {
+      "name": "clamps to block and skips unavailable day",
+      "input": [
+        {
+          "version": 2,
+          "activeBlockId": "range",
+          "serviceBlocks": [
+            {
+              "id": "range",
+              "name": "Range",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-10",
+              "status": "Draft",
+              "generate": {},
+              "holidays": [
+                {
+                  "date": "2026-05-07",
+                  "noClinic": true,
+                  "label": "Closed clinic"
+                }
+              ]
+            }
+          ],
+          "sources": [],
+          "rotators": [
+            {
+              "id": "r1",
+              "fullName": "Drew Quinn",
+              "displayName": "Drew Quinn",
+              "program": "Other",
+              "level": "PGY-2",
+              "role": "Resident",
+              "segments": [
+                {
+                  "start": "2026-05-04",
+                  "end": "2026-05-10"
+                }
+              ],
+              "schoolType": "other",
+              "continuityClinic": "Wednesday PM",
+              "dayOff": [
+                "Friday"
+              ],
+              "unavailableRanges": []
+            }
+          ],
+          "attendings": [
+            {
+              "name": "Alder",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Birch",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Gum",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Dogwood",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Cedar",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Elm",
+              "recurringClinics": [],
+              "oneOffDates": []
+            },
+            {
+              "name": "Hazel",
+              "recurringClinics": [],
+              "oneOffDates": []
+            }
+          ],
+          "expectedSourcePrograms": [
+            "Methodist",
+            "UT Adult Neuro",
+            "UT Pediatrics",
+            "UT Pediatric Neurology Fellow",
+            "UT Med Student",
+            "UT Psychiatry",
+            "Other"
+          ],
+          "inpatientAssignments": [],
+          "outpatientSessions": [],
+          "halfDayFacts": [],
+          "clinicAssignments": [],
+          "posterSettings": {
+            "programName": "Pediatric Neurology Residency",
+            "chief": "",
+            "notes": [
+              "Please arrive 15 minutes before clinic starts.",
+              "Check Epic for patient lists and clinic location details.",
+              "Notify the chief of any schedule conflicts as soon as possible.",
+              "This schedule is subject to change."
+            ],
+            "locations": [
+              {
+                "name": "Main Campus",
+                "address": ""
+              }
+            ],
+            "tagline": "Thank you for all you do for our patients!"
+          },
+          "rules": {
+            "maxConsecutiveInpatientDays": 6,
+            "honorNoClinicHolidays": true
+          },
+          "notes": []
+        },
+        {
+          "id": "range",
+          "name": "Range",
+          "startDate": "2026-05-04",
+          "endDate": "2026-05-10",
+          "status": "Draft",
+          "generate": {},
+          "holidays": [
+            {
+              "date": "2026-05-07",
+              "noClinic": true,
+              "label": "Closed clinic"
+            }
+          ]
+        },
+        {
+          "rotatorId": "r1",
+          "startDate": "2026-05-01",
+          "endDate": "2026-05-12",
+          "phase": "inpatient",
+          "role": "Team senior"
+        }
+      ],
+      "output": {
+        "version": 2,
+        "activeBlockId": "range",
+        "serviceBlocks": [
+          {
+            "id": "range",
+            "name": "Range",
+            "startDate": "2026-05-04",
+            "endDate": "2026-05-10",
+            "status": "Draft",
+            "generate": {},
+            "holidays": [
+              {
+                "date": "2026-05-07",
+                "noClinic": true,
+                "label": "Closed clinic"
+              }
+            ]
+          }
+        ],
+        "sources": [],
+        "rotators": [
+          {
+            "id": "r1",
+            "fullName": "Drew Quinn",
+            "displayName": "Drew Quinn",
+            "program": "Other",
+            "level": "PGY-2",
+            "role": "Resident",
+            "segments": [
+              {
+                "start": "2026-05-04",
+                "end": "2026-05-10"
+              }
+            ],
+            "schoolType": "other",
+            "continuityClinic": "Wednesday PM",
+            "dayOff": [
+              "Friday"
+            ],
+            "unavailableRanges": []
+          }
+        ],
+        "attendings": [
+          {
+            "name": "Alder",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Birch",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Gum",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Dogwood",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Cedar",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Elm",
+            "recurringClinics": [],
+            "oneOffDates": []
+          },
+          {
+            "name": "Hazel",
+            "recurringClinics": [],
+            "oneOffDates": []
+          }
+        ],
+        "expectedSourcePrograms": [
+          "Methodist",
+          "UT Adult Neuro",
+          "UT Pediatrics",
+          "UT Pediatric Neurology Fellow",
+          "UT Med Student",
+          "UT Psychiatry",
+          "Other"
+        ],
+        "inpatientAssignments": [
+          {
+            "id": "in-range-2026-05-04-r1-team-senior",
+            "date": "2026-05-04",
+            "rotatorId": "r1",
+            "role": "Team senior",
+            "source": "Range-Assigned"
+          },
+          {
+            "id": "in-range-2026-05-05-r1-team-senior",
+            "date": "2026-05-05",
+            "rotatorId": "r1",
+            "role": "Team senior",
+            "source": "Range-Assigned"
+          },
+          {
+            "id": "in-range-2026-05-06-r1-team-senior",
+            "date": "2026-05-06",
+            "rotatorId": "r1",
+            "role": "Team senior",
+            "source": "Range-Assigned"
+          },
+          {
+            "id": "in-range-2026-05-07-r1-team-senior",
+            "date": "2026-05-07",
+            "rotatorId": "r1",
+            "role": "Team senior",
+            "source": "Range-Assigned"
+          },
+          {
+            "id": "in-range-2026-05-09-r1-team-senior",
+            "date": "2026-05-09",
+            "rotatorId": "r1",
+            "role": "Team senior",
+            "source": "Range-Assigned"
+          },
+          {
+            "id": "in-range-2026-05-10-r1-team-senior",
+            "date": "2026-05-10",
+            "rotatorId": "r1",
+            "role": "Team senior",
+            "source": "Range-Assigned"
+          }
+        ],
+        "outpatientSessions": [],
+        "halfDayFacts": [],
+        "clinicAssignments": [],
+        "posterSettings": {
+          "programName": "Pediatric Neurology Residency",
+          "chief": "",
+          "notes": [
+            "Please arrive 15 minutes before clinic starts.",
+            "Check Epic for patient lists and clinic location details.",
+            "Notify the chief of any schedule conflicts as soon as possible.",
+            "This schedule is subject to change."
+          ],
+          "locations": [
+            {
+              "name": "Main Campus",
+              "address": ""
+            }
+          ],
+          "tagline": "Thank you for all you do for our patients!"
+        },
+        "rules": {
+          "maxConsecutiveInpatientDays": 6,
+          "honorNoClinicHolidays": true
+        },
+        "notes": []
+      }
+    }
+  ]
+}
